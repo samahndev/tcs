@@ -1,0 +1,47 @@
+.header {
+  background-color: MistyRose;
+  display: flex;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  .header-link {
+    &.active {
+      a,
+      button {
+        background: red;
+      }
+    }
+  }
+
+  .nav {
+    .nav-list {
+      display: flex;
+
+      li {
+        a,
+        button {
+          display: inline-block;
+          height: 20px;
+          position: relative;
+
+          &:hover {
+            .nav-list-on-hover {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .nav-list-on-click,
+    .nav-list-on-hover {
+      display: none;
+      left: 0;
+      position: absolute;
+      top: 20px;
+      z-index: 1000;
+    }
+  }
+}
