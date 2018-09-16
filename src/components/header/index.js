@@ -37,9 +37,9 @@ class Header extends Component {
                 <a>
                   <button>Menu</button>
                   <ul className="nav-list-on-hover">
-                    <li><a href="#b" onClick={this.menuClickHandler}>Breakfast</a></li>
-                    <li><a href="#l" onClick={this.menuClickHandler}>Lunch</a></li>
-                    <li><a href="#d" onClick={this.menuClickHandler}>Dinner</a></li>
+                    <li><button onClick={this.menuClickHandler}>Breakfast</button></li>
+                    <li><button onClick={this.menuClickHandler}>Lunch</button></li>
+                    <li><button onClick={this.menuClickHandler}>Dinner</button></li>
                   </ul>
                 </a>
               </Link>

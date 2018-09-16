@@ -1,0 +1,23 @@
+.image-article {
+  &.image-article-inverse {
+    .image-article-wrapper {
+      flex-direction: row-reverse;
+    }  
+  }
+
+  .image-article-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .image-article-image,
+    .image-article-content {
+      flex: 1;
+    }
+
+    .image-article-content {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.contact-us {
+  display: flex;
+
+  .contact-us-newsletter {
+    flex: 3;
+  }
+
+  .contact-us-image {
+    flex: 6;
+  }
+
+  .contact-us-map {
+    flex: 3;
+  }
+}
