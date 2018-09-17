@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ScrollAnim from 'rc-scroll-anim';
 
+import logo from '../../images/thecandyshop-logo.svg';
+import expandButton from '../../images/expand-button.svg';
+
 const Link = ScrollAnim.Link;
 
 class Header extends Component {
@@ -11,15 +14,15 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <div>
-          <Link to="hero" className="header-link">
-            <button>Logo</button>
-          </Link>
-        </div>
+        <Link to="hero" className="header-link">
+          <div className="header-logo">
+            <img src={logo} alt="The Candyshop" />
+          </div>
+        </Link>
         <nav className="nav">
           <ul className="nav-list">
             <li>
-              <button>Book a table</button>
+              <button className="nav-list-highlight">Book a table</button>
               <div className="nav-list-on-click">
                 <h3>We take reservations for 50% of our dining room</h3>
                 <p>We welcome walk-ins anytime of the day and run a very efficient waitlist system.</p>
@@ -35,7 +38,10 @@ class Header extends Component {
             <li>
               <Link to="menu" className="header-link">
                 <a>
-                  <button>Menu</button>
+                  <button>
+                    Menu
+                    <img className="header-link-icon" src={expandButton} alt="" />
+                  </button>
                   <ul className="nav-list-on-hover">
                     <li><button onClick={this.menuClickHandler}>Breakfast</button></li>
                     <li><button onClick={this.menuClickHandler}>Lunch</button></li>

@@ -35,6 +35,7 @@ export default class HTML extends Component {
           />
           {this.props.headComponents}
           {/* <link rel="shortcut icon" href={favicon} /> */}
+          <link href="https://fonts.googleapis.com/css?family=Poppins:600,700" rel="stylesheet"></link>
           {css}
         </head>
         <body>

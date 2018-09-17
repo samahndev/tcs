@@ -5,7 +5,7 @@ class ContactUs extends Component {
     return (
       <div className="contact-us">
         <div className="contact-us-newsletter">
-          <h4>Don't miss any updates</h4>
+          <h3>Don't miss any updates</h3>
           <p>
             Nam urna condimentum aliqua, perferendis turpis sapiente blandit, doloribus minus ullam taciti eleifend.
           </p>

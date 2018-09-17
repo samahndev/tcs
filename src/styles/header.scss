@@ -1,30 +1,67 @@
 .header {
   background-color: MistyRose;
   display: flex;
+  height: 80px;
   position: fixed;
   right: 20px;
   top: 20px;
   z-index: 1;
 
+  .header-logo {
+    padding: 0 30px;
+
+    img {
+      margin-top: 10px;
+    }
+  }
+
   .header-link {
+    cursor: pointer;
+    height: 100%;
+
+    &:hover,
     &.active {
       a,
       button {
-        background: red;
+        background-color: $yellow;
       }
+    }
+
+    &:hover {
+      .header-link-icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    a,
+    button {
+      background-color: transparent;
+    }
+
+    .header-link-icon {
+      margin-left: 18px;
     }
   }
 
   .nav {
+    height: 100%;
+
     .nav-list {
       display: flex;
+      height: 100%;
 
       li {
         a,
         button {
+          border: 0;
+          cursor: pointer;
           display: inline-block;
-          height: 20px;
+          height: 100%;
+          line-height: 1;
+          outline: none;
+          padding: 0 30px;
           position: relative;
+          text-align: left;
 
           &:hover {
             .nav-list-on-hover {
@@ -32,16 +69,36 @@
             }
           }
         }
-      }
-    }
 
-    .nav-list-on-click,
-    .nav-list-on-hover {
-      display: none;
-      left: 0;
-      position: absolute;
-      top: 20px;
-      z-index: 1000;
+        a button {
+          padding: 0;
+        }
+      }
+
+      .nav-list-highlight {
+        background-color: $green;
+        color: white;
+      }
+
+      .nav-list-on-click,
+      .nav-list-on-hover {
+        display: none;
+        left: 0;
+        position: absolute;
+        top: 80px;
+        z-index: 1000;
+      }
+
+      .nav-list-on-hover {
+        width: 100%;
+
+        li button {
+          background-color: $ivory;
+          height: 80px;
+          padding: 0 30px;
+          width: 100%;
+        }
+      }
     }
   }
 }
