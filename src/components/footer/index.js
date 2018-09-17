@@ -4,7 +4,7 @@ import logo from '../../images/thecandyshop-logo.svg';
 
 export default () => (
   <footer className="footer">
-    <ul>
+    <ul className="footer-list">
       <li><a>Facebook</a></li>
       <li><a>Instagram</a></li>
     </ul>
