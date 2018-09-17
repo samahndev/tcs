@@ -8,16 +8,35 @@
   .image-article-wrapper {
     display: flex;
     flex-direction: row;
+    padding: 40px 40px 0;
 
     .image-article-image,
     .image-article-content {
       flex: 1;
     }
 
+    .image-article-image {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
     .image-article-content {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
+      .image-article-content-wrapper {
+        padding: 60px 100px 80px;
+      }
+
+      p {
+        margin: 20px 0 0;
+      }
+
+      p:first-of-type {
+        margin-top: 30px;
+      }
+
+      .image-article-content-title {
+        margin: 0;
+      }
     }
   }
 }
