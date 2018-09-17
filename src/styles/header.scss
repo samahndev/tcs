@@ -89,6 +89,42 @@
         z-index: 1000;
       }
 
+      .nav-list-on-click {
+        background-color: $green;
+        color: white;
+        left: auto;
+        padding: 50px 40px;
+        width: 370px;
+
+        &.active {
+          display: block;
+        }
+
+        p {
+          @extend .font-sm;
+          margin: 15px 0 0;
+        }
+
+        p:first-of-type {
+          margin-top: 30px;
+        }
+
+        .nav-list-on-click-title {
+          margin: 0;
+        }
+
+        .btn {
+          @extend .btn;
+          margin-top: 20px;
+        }
+
+        .nav-list-on-click-close-button {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+      }
+
       .nav-list-on-hover {
         width: 100%;
 

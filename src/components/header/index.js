@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ScrollAnim from 'rc-scroll-anim';
+import cx from 'classnames';
 
 import logo from '../../images/thecandyshop-logo.svg';
 import expandButton from '../../images/expand-button.svg';
@@ -7,8 +8,24 @@ import expandButton from '../../images/expand-button.svg';
 const Link = ScrollAnim.Link;
 
 class Header extends Component {
+  state = {
+    isBooking: false
+  };
+
   menuClickHandler = e => {
     e.stopPropagation();
+  }
+
+  openBookingForm = () => {
+    this.setState({
+      isBooking: this.state.isBooking ? false : true
+    });
+  }
+
+  closeBookingForm =() => {
+    this.setState({
+      isBooking: false
+    });
   }
 
   render() {
@@ -22,12 +39,32 @@ class Header extends Component {
         <nav className="nav">
           <ul className="nav-list">
             <li>
-              <button className="nav-list-highlight">Book a table</button>
-              <div className="nav-list-on-click">
-                <h3>We take reservations for 50% of our dining room</h3>
+              <button
+                className="nav-list-highlight"
+                onClick={this.openBookingForm}
+              >
+                Book a Table
+              </button>
+              <div className={cx({
+                'nav-list-on-click': true,
+                'active': this.state.isBooking
+              })}>
+                <h3 className="nav-list-on-click-title">We take reservations for 50% of our dining room</h3>
                 <p>We welcome walk-ins anytime of the day and run a very efficient waitlist system.</p>
-                <p>Please send us an email to book a table.</p>
-                <a href="mailto:hello@thecandyshop.co.nz">Check availability</a>
+                <p>To book a table, please send us an email with information about the number of people, the required date and time.</p>
+                <a
+                  className="btn"
+                  href="mailto:hello@thecandyshop.co.nz"
+                  onClick={this.closeBookingForm}
+                >
+                  Send an email
+                </a>
+                <span
+                  className="nav-list-on-click-close-button"
+                  onClick={this.closeBookingForm}
+                >
+                  X
+                </span>
               </div>
             </li>
             <li>
