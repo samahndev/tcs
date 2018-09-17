@@ -1,3 +1,12 @@
 .philosophy {
-  background-color: pink;
+  padding: 120px 160px;
+
+  .philosophy-heading {
+    margin: 0;
+  }
+
+  .philosophy-copy {
+    margin: 40px 0 0;
+    max-width: 600px;
+  }
 }
