@@ -1,11 +1,43 @@
 .hero {
-  background-color: pink;
+  background: $green url('../images/petr-sevcovic-594807-unsplash.jpg') center center no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+  position: relative;
+
+  &:before {
+    background-color: rgba(black, .4);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
 
   .hero-content {
-    background-color: hotpink;
+    color: white;
+    margin: 80px 160px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content-title {
+    margin: 80px 0 0;
+  }
+
+  .hero-content-address {
+   font-size: 28px;
+   font-weight: 700;
+   line-height: 33px;
+   margin: 30px 0 0;
+  }
+
+  .hero-content-opening-hours {
+    @extend .font-sm;
+    margin: 10px 0 0;
   }
 }
