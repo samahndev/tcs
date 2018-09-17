@@ -1,15 +1,84 @@
 .contact-us {
   display: flex;
+  padding-top: 40px;
 
   .contact-us-newsletter {
-    flex: 3;
+    background-color: $green;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 30px;
+    width: 25%;
+
+    p {
+      @extend .font-sm;
+    }
+
+    .contact-us-newsletter-form {
+      text-align: right;
+
+      .form-input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid white;
+        outline: none;
+        padding: 10px 0;
+        width: 100%;
+
+        &.form-input-error {
+          border-color: red;
+        }
+      }
+
+      .btn {
+        background-color: transparent;
+        cursor: pointer;
+        margin-top: 20px;
+
+        &.btn-disabled {
+          cursor: not-allowed;
+          opacity: .6;
+        }
+      }
+    }
+
+    .contact-us-newsletter-message {}
   }
 
   .contact-us-image {
-    flex: 6;
+    width: 45%;
+
+    .contact-us-image-item {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      height: 100%;
+    }
   }
 
   .contact-us-map {
-    flex: 3;
+    width: 30%;
+
+    .contact-us-map-image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      height: 17vw;
+    }
+
+    .contact-us-map-content {
+      padding: 40px 30px;
+
+      a {
+        @extend .font-lg;
+        display: inline-block;
+        margin-top: 20px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
   }
 }
