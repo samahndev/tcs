@@ -1,7 +1,49 @@
 .menus {
   display: flex;
+  padding-top: 40px;
 
   .menu {
     flex: 1;
+
+    &:nth-child(2) {
+      background-color: $green;
+      color: white;
+
+      a {
+        color: inherit;
+      }
+    }
+
+    &.menu-min {
+      .menu-image {
+        height: 100%;
+      }  
+    }
+
+    .menu-content {
+      padding: 30px;
+    }
+
+    .menu-image {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 17vw;
+    }
+
+    .menu-name {
+      margin: 0;
+    }
+
+    .menu-time,
+    .menu-desc,
+    .menu-link {
+      @extend .font-sm;
+      margin-top: 20px;
+    }
+
+    .menu-time {
+      display: inline-block;
+    }
   }
 }

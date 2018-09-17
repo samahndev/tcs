@@ -7,12 +7,14 @@ export default props => (
     'image-article-inverse': props.inverse,
   })}>
     <div className="image-article-wrapper">
-      <div
-        className="image-article-image"
-        style={{
-          backgroundImage: `url(https://picsum.photos/650/500/?image=900)`
-        }}
-      />
+      <div className="image-article-image">
+        <div
+          className="image-article-image-item"
+          style={{
+            backgroundImage: `url(https://picsum.photos/650/500/?image=900)`
+          }}
+        />
+      </div>
       <div className="image-article-content">
         <div className="image-article-content-wrapper">
           <h2 className="image-article-content-title">About the Candyshop</h2>

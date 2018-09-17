@@ -2,6 +2,20 @@
   &.image-article-inverse {
     .image-article-wrapper {
       flex-direction: row-reverse;
+
+      .image-article-image {
+        margin-left: 40px;
+        margin-right: 0;
+      }
+
+      .image-article-content {
+        margin-left: 0;
+        margin-right: 40px;
+
+        .image-article-content-wrapper {
+          padding: 60px 20px 80px 40px;
+        }
+      }
     }  
   }
 
@@ -12,18 +26,25 @@
 
     .image-article-image,
     .image-article-content {
-      flex: 1;
+      width: calc(50% - 40px);
     }
 
     .image-article-image {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+      margin-right: 40px;
+
+      .image-article-image-item {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+      }
     }
 
     .image-article-content {
+      margin-left: 40px;
+
       .image-article-content-wrapper {
-        padding: 60px 100px 80px;
+        padding: 60px 40px 80px 20px;
       }
 
       p {
