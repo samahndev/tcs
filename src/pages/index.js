@@ -13,55 +13,54 @@ class IndexPage extends Component {
   render() {
     return (
       <div>
-
         {/* Hero */}
-        <Section title="hero">
+        {/* <Section title="hero">
           <Hero />
-        </Section>
+        </Section> */}
 
         {/* About */}
-        <Section title="about">
+        {/* <Section title="about">
           <ImageArticle
             image="https://picsum.photos/650/500/?image=900"
             heading="About the Candyshop"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p>"
           />
-        </Section>
+        </Section> */}
 
         {/* Menus */}
-        <Section title="menu">
+        {/* <Section title="menu">
           <Menus />
-        </Section>
+        </Section> */}
 
         {/* Weekly promo */}
-        <Section title="weekly-specials">
+        {/* <Section title="weekly-specials">
           <WeeklySpecials />
-        </Section>
+        </Section> */}
 
         {/* Functions */}
-        <Section title="function">
+        {/* <Section title="function">
           <ImageArticle
             image="https://picsum.photos/650/500/?image=900"
             heading="About the Candyshop"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p><p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu. Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p><p>Aliquip, convallis faucibus facilisi.</p>"
             cta={{ link: 'mailto:hello@thecandyshopnz.com', text: 'Email us' }}
           />
-        </Section>
+        </Section> */}
 
         {/* Contact Us */}
-        <Section title="contact-us">
+        {/* <Section title="contact-us">
           <ContactUs />
-        </Section>
+        </Section> */}
 
         {/* Philosophy */}
-        <Section>
+        {/* <Section>
           <Philosophy />
-        </Section>
+        </Section> */}
 
         {/* Instagram Feed */}
-        <Section>
+        {/* <Section>
           <InstagramFeed />          
-        </Section>
+        </Section> */}
       </div>
     );
   }

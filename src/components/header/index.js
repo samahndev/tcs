@@ -38,6 +38,10 @@ class Header extends Component {
             <img src={logo} alt="The Candyshop" />
           </div>
         </Link>
+        <input id="nav-toggle" className="header-toggle-checkbox" type="checkbox" />
+        <label htmlFor="nav-toggle" className="header-toggle">
+          <span /><span />
+        </label>
         <nav className="nav">
           <ul className="nav-list">
             <li>

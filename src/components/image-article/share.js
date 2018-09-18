@@ -2,7 +2,6 @@ const shareDialogTitle = 'ShareWindow';
 const shareDialogParameters = 'toolbar=0,status=0,width=626,height=436,resizable=yes';
 
 const facebookShare = () => {
-  console.log('...')
   window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.location.href, shareDialogTitle, shareDialogParameters);
 };
 

@@ -1,0 +1,150 @@
+// Sizes
+$xxs-min: 320px;
+$xxs-max: 479px;
+$xs-min: 480px;
+$xs-max: 767px;
+$phone-wide: 600px;
+$sm-min: 768px;
+$sm-max: 991px;
+$md-min: 992px;
+$md-max: 1199px;
+$lg-min: 1200px;
+$laptop: 1441px;
+$lg-max: 1599px;
+$xlg-min: 1600px;
+$xxlg-min: 1800px;
+
+@mixin below-sm {
+  @media screen and (max-width: #{$xs-max}) {
+    @content;
+  }
+}
+
+@mixin below-tablet {
+  @media screen and (max-width: #{$sm-min}) {
+    @content;
+  }
+}
+
+@mixin below-tablet-landscape {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin above-370 {
+  @media screen and (min-width: 370px) {
+    @content;
+  }
+}
+
+@mixin above-414 {
+  @media screen and (min-width: 414px) {
+    @content;
+  }
+}
+
+@mixin above-xs {
+  @media screen and (min-width: #{$xs-min}) {
+    @content;
+  }
+}
+
+@mixin above-phone-wide {
+  @media screen and (min-width: #{$phone-wide}) {
+    @content;
+  }
+}
+
+@mixin above-sm {
+  @media screen and (min-width: #{$sm-min}) {
+    @content;
+  }
+}
+
+@mixin above-tablet {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin above-md {
+  @media screen and (min-width: #{$md-min}) {
+    @content;
+  }
+}
+
+@mixin above-tablet-landscape {
+  @media screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin above-lg {
+  @media screen and (min-width: #{$lg-min}) {
+    @content;
+  }
+}
+
+@mixin above-1400 {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin above-laptop {
+  @media screen and (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin above-xlg {
+  @media screen and (min-width: #{$xlg-min}) {
+    @content;
+  }
+}
+
+@mixin above-xxlg {
+  @media screen and (min-width: #{$xxlg-min}) {
+    @content;
+  }
+}
+
+@mixin on-ie10-11 {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content
+  }
+}
+
+@mixin aspect-ratio($width, $height, $children) {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > #{$children} {
+    position: absolute;
+  }
+}
+
+@mixin content-wrapper($width) {
+  margin: 0 auto;
+  max-width: $width;
+  padding: 0 25px;
+
+  @media (min-width: 1400px) {
+    padding: 0;
+  }
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
