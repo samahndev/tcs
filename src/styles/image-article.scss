@@ -31,6 +31,7 @@
 
     .image-article-image {
       margin-right: 40px;
+      position: relative;
 
       .image-article-image-item {
         background-repeat: no-repeat;
@@ -57,6 +58,41 @@
 
       .image-article-content-title {
         margin: 0;
+      }
+    }
+
+    .image-article-date {
+      position: absolute;
+      right: 0;
+      top: 60px;
+      width: 120px;
+
+      .image-article-day,
+      .image-article-time {
+        padding: 18px 23px;
+        width: 100%;
+      }
+
+      .image-article-day {
+        background-color: $green;
+        color: white;
+
+        .image-article-day-week {
+          @extend .font-lg;
+          line-height: 1;
+        }
+
+        .image-article-day-occurance {
+          font-size: 13px;
+          line-height: 1;
+          margin-top: 5px;
+          opacity: .5;
+        }
+      }
+
+      .image-article-time {
+        background-color: $yellow;
+        color: $green;
       }
     }
   }
