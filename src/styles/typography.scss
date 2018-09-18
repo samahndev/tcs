@@ -16,8 +16,13 @@ h3,
 
 h1,
 .h1 {
-  font-size: 90px;
-  line-height: 100px;
+  font-size: 45px;
+  line-height: 50px;
+
+  @include above-sm() {
+    font-size: 90px;
+    line-height: 100px;
+  }
 }
 
 h2,
@@ -42,6 +47,11 @@ p,
 }
 
 .font-sm {
-  font-size: 16px;
+  font-size: 13px;
+  line-height: 20px;
+
+  @include above-sm() {
+    font-size: 16px;
   line-height: 23px;
+  }
 }

@@ -20,9 +20,13 @@
 
   .hero-content {
     color: white;
-    margin: 80px 160px 0;
+    margin: 0 20px;
     position: relative;
     z-index: 1;
+
+    @include above-sm() {
+      margin: 80px 160px 0;
+    }
   }
 
   .hero-content-title {
@@ -30,10 +34,15 @@
   }
 
   .hero-content-address {
-   font-size: 28px;
+   font-size: 20px;
    font-weight: 700;
-   line-height: 33px;
+   line-height: 25px;
    margin: 30px 0 0;
+
+   @include above-sm() {
+    font-size: 28px;
+    line-height: 33px;
+   }
   }
 
   .hero-content-opening-hours {

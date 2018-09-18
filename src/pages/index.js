@@ -14,9 +14,9 @@ class IndexPage extends Component {
     return (
       <div>
         {/* Hero */}
-        {/* <Section title="hero">
+        <Section title="hero">
           <Hero />
-        </Section> */}
+        </Section>
 
         {/* About */}
         {/* <Section title="about">
