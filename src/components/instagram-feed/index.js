@@ -28,18 +28,6 @@ class InstagramFeed extends Component {
           <div className="instagram-feed-item">
             <img src="https://picsum.photos/360/360/?image=900" alt="" />
           </div>
-          <div className="instagram-feed-item">
-            <img src="https://picsum.photos/360/360/?image=900" alt="" />
-          </div>
-          <div className="instagram-feed-item">
-            <img src="https://picsum.photos/360/360/?image=900" alt="" />
-          </div>
-          <div className="instagram-feed-item">
-            <img src="https://picsum.photos/360/360/?image=900" alt="" />
-          </div>
-          <div className="instagram-feed-item">
-            <img src="https://picsum.photos/360/360/?image=900" alt="" />
-          </div>
         </Slider>
       </div>
     );
