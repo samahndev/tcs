@@ -6,7 +6,7 @@ export default () => (
       <h1 className="hero-content-title">
         All day eatery,
         <br />
-        Kiwi food with a twist.
+        Kiwi food with a twist
       </h1>
       <p className="hero-content-address">
         2-8 Osbourne Street,

@@ -7,6 +7,13 @@
 }
 
 #weekly-specials {
+  .slick-slide {
+    .image-article-content-copy {
+      height: 180px;
+      overflow: hidden;
+    }
+  }
+
   .slick-arrow {
     background-color: $ivory;
     border: 0;

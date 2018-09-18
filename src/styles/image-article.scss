@@ -43,6 +43,7 @@
 
     .image-article-content {
       margin-left: 40px;
+      position: relative;
 
       .image-article-content-wrapper {
         padding: 60px 40px 80px 20px;
@@ -58,6 +59,23 @@
 
       .image-article-content-title {
         margin: 0;
+      }
+
+      .image-article-content-share {
+        bottom: 28px;
+        display: flex;
+        position: absolute;
+        right: 0;
+
+        img {
+          cursor: pointer;
+          margin-left: 15px;
+          transform: scale(.8);
+        }
+      }
+
+      .btn {
+        margin-top: 40px;
       }
     }
 
