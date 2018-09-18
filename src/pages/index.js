@@ -19,13 +19,13 @@ class IndexPage extends Component {
         </Section>
 
         {/* About */}
-        {/* <Section title="about">
+        <Section title="about">
           <ImageArticle
             image="https://picsum.photos/650/500/?image=900"
             heading="About the Candyshop"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p>"
           />
-        </Section> */}
+        </Section>
 
         {/* Menus */}
         {/* <Section title="menu">
