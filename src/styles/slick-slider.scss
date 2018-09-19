@@ -1,8 +1,19 @@
 .slick-slider {
+  .slick-slide {
+    div {
+      outline: none;
+    }
+  }
+  
   .slick-arrow,
   .slick-dots {
+    outline: none;
     position: absolute;
     z-index: 1;
+
+    button {
+      outline: none;
+    }
   }
 }
 
@@ -81,25 +92,10 @@
       margin-right: 13px;
       position: relative;
 
-      &:before {
-        background-color: transparent;
-        border-radius: 50%;
-        content: '';
-        height: 12px;
-        left: -2px;
-        position: absolute;
-        top: 50%;
-        width: 12px;
-        z-index: 0;
-      }
-
       &.slick-active {
-        &:before {
-          background-color: $yellow;
-        }
-
         button {
           background-color: $green;
+          border: 2px solid $yellow;
         }
       }
 
@@ -109,11 +105,11 @@
         border-radius: 50%;
         cursor: pointer;
         font-size: 0;
-        height: 8px;
+        height: 10px;
         line-height: 0;
         padding: 0;
         position: relative;
-        width: 8px;
+        width: 10px;
         z-index: 1;
       }
     }

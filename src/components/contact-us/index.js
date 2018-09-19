@@ -158,14 +158,14 @@ class ContactUs extends Component {
           />
           <div className="contact-us-map-content">
             <a href="#">
-              2-8 Osbourne Street,
+              <span>2-8 Osbourne Street,</span>
               <br />
-              Newmarket, Auckland
+              <span>Newmarket, Auckland</span>
             </a>
             <br />
             <a href="#">021 259 7838</a>
             <br />
-            <a href="#">hello@thecandyshopnz.com</a>
+            <a href="#"><span>hello@thecandyshopnz.com</span></a>
           </div>
         </div>
       </div>

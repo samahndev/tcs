@@ -174,14 +174,27 @@ $desktopWidth: 1440px;
 	}
 
   #{$property}: $setValue;
+}
 
-	// EXAMPLES:
+@mixin underlined-link($lineWidth: 2, $linePos: 0) {
+  color: $green;
+  opacity: 1;
+  position: relative;
+  text-decoration: none;
+  transition: opacity .2s $cubicBezier;
 
-	// SINGLE VALUE
-  //@include relative-size(font-size, 32);
+  &:before {
+    background-color: rgba($yellow, .8);
+    bottom: #{$linePos}px;
+    content: '';
+    height: #{$lineWidth}px;
+    left: 0;
+    position: absolute;
+    width: 100%;
 
-	// MULTIPLE VALUES
-	// $values: 100 50 20;
-  // @include relative-size(padding, $values);
-
+    @include above-sm() {
+      @include relative-size(bottom, $linePos);
+      @include relative-size(height, $lineWidth);
+    }
+  }
 }

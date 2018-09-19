@@ -118,6 +118,10 @@
     a,
     button {
       background-color: transparent;
+
+      &:before {
+        content: none;
+      }
     }
 
     .header-link-icon {
@@ -168,6 +172,7 @@
           color: $green;
           cursor: pointer;
           display: inline-block;
+          font-weight: 700;
           height: 100%;
           line-height: 1;
           outline: none;

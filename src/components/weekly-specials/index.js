@@ -12,6 +12,7 @@ class WeeklySpecials extends Component {
       useTransform: false,
       nextArrow: <SlickArrow type="next" />,
       prevArrow: <SlickArrow type="prev" />,
+      swipe: false,
     };
 
     return (

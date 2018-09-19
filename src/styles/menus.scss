@@ -13,10 +13,14 @@
 
     &:nth-child(2) {
       background-color: $green;
-      color: white;
+      color: $ivory;
 
       a {
         color: inherit;
+
+        &::before {
+          opacity: .7;
+        }
       }
     }
 
@@ -62,6 +66,12 @@
 
     .menu-time {
       display: inline-block;
+      margin-top: 10px;
+      opacity: .3;
+
+      @include above-sm() {
+        @include relative-size(margin-top, 10);
+      }
     }
   }
 }

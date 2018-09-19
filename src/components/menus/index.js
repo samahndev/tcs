@@ -35,7 +35,9 @@ export default props => (
           }}
         />
         <div className="menu-content">
-          <h3 className="menu-name">{menu.name}</h3>
+          <h3 className="menu-name">
+            <a href={menu.link} target="_blank">{menu.name}</a>
+          </h3>
           <small className="menu-time">{menu.time}</small>
           <p className="menu-desc">{menu.desc}</p>
           <a className="menu-link" href={menu.link} target="_blank">Download</a>

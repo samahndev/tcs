@@ -80,7 +80,7 @@ class Header extends Component {
             </li>
             <li>
               <Link to="menu" className="header-link">
-                <a>
+                <a className="header-link-item">
                   <button>
                     Menu
                     <img className="header-link-icon" src={expandButton} alt="" />

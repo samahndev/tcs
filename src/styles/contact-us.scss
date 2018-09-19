@@ -122,8 +122,16 @@
         color: $green;
         display: inline-block;
 
+        &:before {
+          content: none;
+        }
+
         &:first-child {
           margin-top: 0;
+        }
+
+        span {
+          @include underlined-link(7, -2);
         }
       }
     }

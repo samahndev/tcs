@@ -8,8 +8,8 @@
 
   @include above-sm() {
     flex-direction: row;
-    $value: 60 30;
-    @include relative-size(font-size, $value);
+    $value: 70 30;
+    @include relative-size(padding, $value);
   }
 
   img {

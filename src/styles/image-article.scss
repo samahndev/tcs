@@ -27,8 +27,18 @@
           padding: 40px 20px 0;
 
           @include above-sm() {
-            $value: 60 20 80 40;
+            $value: 70 20 80 40;
             @include relative-size(padding, $value);
+          }
+
+          &:before {
+            content: none;
+
+            @include above-sm() {
+              @include relative-size(right, -155);
+              content: '';
+              left: auto;
+            }
           }
         }
       }
@@ -84,10 +94,36 @@
 
       .image-article-content-wrapper {
         padding: 40px 20px 0;
+        position: relative;
 
         @include above-sm() {
-          $value: 60 40 80 20;
+          $value: 70 40 80 20;
           @include relative-size(padding, $value);
+        }
+
+        &:before {
+          background-color: $gold;
+          content: '';
+          height: 70px;
+          left: 30px;
+          position: absolute;
+          top: -40px;
+          width: 1px;
+
+          @include above-sm() {
+            @include relative-size(left, -155);
+            @include relative-size(top, 100);
+            @include relative-size(width, 150);
+            height: 1px;
+          }
+        }
+
+        .image-article-content-copy {
+          width: 100%;
+
+          @include above-sm() {
+            width: 90%;
+          }
         }
       }
 
