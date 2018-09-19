@@ -145,7 +145,7 @@ class ContactUs extends Component {
           <div
             className="contact-us-image-item"
             style={{
-              backgroundImage: 'url(https://picsum.photos/650/470/?image=900)'
+              backgroundImage: 'url(https://via.placeholder.com/640x500/6b6d65)'
             }}
           />
         </div>
@@ -153,7 +153,7 @@ class ContactUs extends Component {
           <div
             className="contact-us-map-image"
             style={{
-              backgroundImage: 'url(https://picsum.photos/360/240/?image=903)'
+              backgroundImage: 'url(https://via.placeholder.com/430x250/ede5d9)'
             }}
           />
           <div className="contact-us-map-content">

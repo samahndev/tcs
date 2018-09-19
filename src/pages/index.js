@@ -21,7 +21,7 @@ class IndexPage extends Component {
         {/* About */}
         <Section title="about">
           <ImageArticle
-            image="https://picsum.photos/650/500/?image=900"
+            image='https://via.placeholder.com/640x440/505a5e'
             heading="About the Candyshop"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p>"
           />
@@ -40,7 +40,7 @@ class IndexPage extends Component {
         {/* Functions */}
         <Section title="function">
           <ImageArticle
-            image="https://picsum.photos/650/500/?image=900"
+            image="https://via.placeholder.com/640x850/6b6967"
             heading="About the Candyshop"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p><p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu. Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p><p>Aliquip, convallis faucibus facilisi.</p>"
             cta={{ link: 'mailto:hello@thecandyshopnz.com', text: 'Email us' }}

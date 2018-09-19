@@ -1,8 +1,19 @@
 .instagram-feed {
   margin-top: 10px;
 
-  .slick-slide img {
-    width: 100%;
+  .instagram-feed-item {
+    @include aspect-ratio(1, 1);
+
+    .instagram-feed-item-image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 
   .slick-dots {

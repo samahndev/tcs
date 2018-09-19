@@ -30,6 +30,12 @@
       flex-direction: row;
     }
 
+    li {
+      a {
+        color: $green;
+      }
+    }
+
     li:first-child {
       margin: 0 0 15px;
 

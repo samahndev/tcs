@@ -18,7 +18,7 @@ class WeeklySpecials extends Component {
       <Slider {...settings}>
         <div>
           <ImageArticle
-            image="https://picsum.photos/650/500/?image=900"
+            image="https://via.placeholder.com/640x440/584c49"
             heading="About the Candyshop 1"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p>"
             date={{ day: 'Wed', occurance: 'Everyweek', time: '5-9pm' }}
@@ -28,7 +28,7 @@ class WeeklySpecials extends Component {
         </div>
         <div>
           <ImageArticle
-            image="https://picsum.photos/650/500/?image=900"
+            image="https://via.placeholder.com/640x440/484c49"
             heading="About the Candyshop 2"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p>"
             date={{ day: 'Wed', occurance: 'Everyweek', time: '5-9pm' }}
@@ -38,7 +38,7 @@ class WeeklySpecials extends Component {
         </div>
         <div>
           <ImageArticle
-            image="https://picsum.photos/650/500/?image=900"
+            image="https://via.placeholder.com/640x440/384c49"
             heading="About the Candyshop 3"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p>"
             date={{ day: 'Wed', occurance: 'Everyweek', time: '5-9pm' }}
@@ -48,7 +48,7 @@ class WeeklySpecials extends Component {
         </div>
         <div>
           <ImageArticle
-            image="https://picsum.photos/650/500/?image=900"
+            image="https://via.placeholder.com/640x440/284c49"
             heading="About the Candyshop 4"
             copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p>"
             date={{ day: 'Wed', occurance: 'Everyweek', time: '5-9pm' }}
