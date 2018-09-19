@@ -126,10 +126,11 @@
 
         img {
           cursor: pointer;
+          height: 16px;
           margin-left: 15px;
-          transform: scale(.8);
 
           @include above-sm() {
+            @include relative-size(height, 16);
             @include relative-size(margin-left, 15);
           }
         }
@@ -168,7 +169,7 @@
 
       .image-article-day {
         background-color: $green;
-        color: white;
+        color: $ivory;
 
         .image-article-day-week {
           display: block;

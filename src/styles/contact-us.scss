@@ -10,7 +10,7 @@
 
   .contact-us-newsletter {
     background-color: $green;
-    color: white;
+    color: $ivory;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,15 +31,21 @@
       text-align: right;
 
       .form-input {
+        @extend .font-sm;
         background-color: transparent;
         border: 0;
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid $ivory;
+        color: rgba($ivory, .4);
         outline: none;
-        padding: 10px 0;
+        padding: 8px 0;
         width: 100%;
 
+        &::placeholder {
+          color: rgba($ivory, .4);
+        }
+
         @include above-sm() {
-          $value: 10 0;
+          $value: 8 0;
           @include relative-size(padding, $value);
         }
 
@@ -98,7 +104,7 @@
       height: 70vw;
 
       @include above-sm() {
-        height: 17vw;
+        height: 18.5vw;
       }
     }
 
@@ -113,6 +119,7 @@
       a {
         @include relative-size(margin-top, 20);
         @extend .font-lg;
+        color: $green;
         display: inline-block;
 
         &:first-child {
