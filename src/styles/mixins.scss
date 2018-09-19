@@ -14,6 +14,11 @@ $lg-max: 1599px;
 $xlg-min: 1600px;
 $xxlg-min: 1800px;
 
+// Relative sizing variables
+$relativeSizeBase: 1440;
+$relativeSizeMax: 1680px;
+$desktopWidth: 1440px;
+
 @mixin below-sm {
   @media screen and (max-width: #{$xs-max}) {
     @content;
@@ -147,4 +152,25 @@ $xxlg-min: 1800px;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+@mixin relative-size($property, $values, $baseSize:100vw) {
+
+  $setValue: ();
+
+	@each $value in $values {
+		$setValue: append($setValue, ($value/$relativeSizeBase)*$baseSize);
+	}
+
+  #{$property}: $setValue;
+
+	// EXAMPLES:
+
+	// SINGLE VALUE
+  //@include relative-size(font-size, 32);
+
+	// MULTIPLE VALUES
+	// $values: 100 50 20;
+  // @include relative-size(padding, $values);
+
 }

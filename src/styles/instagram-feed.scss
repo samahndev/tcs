@@ -1,6 +1,10 @@
 .instagram-feed {
   margin-top: 10px;
 
+  .slick-slide img {
+    width: 100%;
+  }
+
   .slick-dots {
     top: -50px;
     right: 40px;

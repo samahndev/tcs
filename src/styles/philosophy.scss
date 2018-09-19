@@ -1,12 +1,23 @@
 .philosophy {
-  padding: 120px 160px;
+  padding: 30px 40px 80px;
+
+  @include above-sm() {
+    $value: 120 160;
+    @include relative-size(padding, $value);
+  }
 
   .philosophy-heading {
     margin: 0;
   }
 
   .philosophy-copy {
-    margin: 40px 0 0;
+    margin: 40px 0;
     max-width: 600px;
+
+    @include above-sm() {
+      $value: 40 0;
+      @include relative-size(margin, $value);
+      @include relative-size(max-width, 600);
+    }
   }
 }

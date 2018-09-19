@@ -32,7 +32,6 @@ class ImageArticle extends Component {
                   <span className="image-article-day-week">
                     {date.day }
                   </span>
-                  <br />
                   <span className="image-article-day-occurance">
                     {date.occurance}
                   </span>

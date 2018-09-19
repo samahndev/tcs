@@ -1,19 +1,35 @@
 .image-article {
   &.image-article-inverse {
     .image-article-wrapper {
-      flex-direction: row-reverse;
+      flex-direction: column;
+
+      @include above-sm() {
+        flex-direction: row-reverse;
+      }
 
       .image-article-image {
-        margin-left: 40px;
         margin-right: 0;
+
+        @include above-sm() {
+          @include relative-size(margin-left, 40);
+        }
       }
 
       .image-article-content {
         margin-left: 0;
         margin-right: 40px;
 
+        @include above-sm() {
+          @include relative-size(margin-right, 40);
+        }
+
         .image-article-content-wrapper {
-          padding: 60px 20px 80px 40px;
+          padding: 40px 20px 0;
+
+          @include above-sm() {
+            $value: 60 20 80 40;
+            @include relative-size(padding, $value);
+          }
         }
       }
     }  
@@ -26,7 +42,9 @@
 
     @include above-sm() {
       flex-direction: row;
-      padding: 40px 40px 0;
+      $value: 40 40 0;
+      @include relative-size(padding, $value);
+      
     }
 
     .image-article-image,
@@ -34,7 +52,7 @@
       width: 100%;
 
       @include above-sm() {
-        width: calc(50% - 40px);
+        width: calc(50% - 2.777777vw);
       }
     }
 
@@ -45,7 +63,7 @@
 
       @include above-sm() {
         height: auto;
-        margin-right: 40px;
+        @include relative-size(margin-right, 40);
       }
 
       .image-article-image-item {
@@ -61,14 +79,15 @@
       position: relative;
 
       @include above-sm() {
-        margin-left: 40px;
+        @include relative-size(margin-left, 40);
       }
 
       .image-article-content-wrapper {
         padding: 40px 20px 0;
 
         @include above-sm() {
-          padding: 60px 40px 80px 20px;
+          $value: 60 40 80 20;
+          @include relative-size(padding, $value);
         }
       }
 
@@ -76,7 +95,7 @@
         margin: 15px 0 0;
 
         @include above-sm() {
-          margin-top: 20px;
+          @include relative-size(margin-top, 20);
         }
       }
 
@@ -84,7 +103,7 @@
         margin-top: 20px;
 
         @include above-sm() {
-          margin-top: 30px;
+          @include relative-size(margin-top, 30);
         }
       }
 
@@ -93,33 +112,58 @@
       }
 
       .image-article-content-share {
-        bottom: 28px;
+        bottom: 0;
         display: flex;
+        left: 20px;
         position: absolute;
-        right: 0;
+        right: auto;
+        
+        @include above-sm() {
+          @include relative-size(bottom, 28);
+          left: auto;
+          right: 0;
+        }
 
         img {
           cursor: pointer;
           margin-left: 15px;
           transform: scale(.8);
+
+          @include above-sm() {
+            @include relative-size(margin-left, 15);
+          }
         }
       }
 
       .btn {
         margin-top: 40px;
+
+        @include above-sm() {
+          @include relative-size(margin-top, 40);
+        }
       }
     }
 
     .image-article-date {
       position: absolute;
       right: 0;
-      top: 60px;
-      width: 120px;
+      top: 45px;
+      width: 90px;
+
+      @include above-sm() {
+        @include relative-size(top, 60);
+        @include relative-size(width, 120);
+      }
 
       .image-article-day,
       .image-article-time {
-        padding: 18px 23px;
+        padding: 10px 15px;
         width: 100%;
+
+        @include above-sm() {
+          $value: 18 23;
+          @include relative-size(padding, $value);
+        }
       }
 
       .image-article-day {
@@ -127,21 +171,36 @@
         color: white;
 
         .image-article-day-week {
-          @extend .font-lg;
+          display: block;
+          font-size: 16px;
           line-height: 1;
+
+          @include above-sm() {
+            @include relative-size(font-size, 20);
+          }
         }
 
         .image-article-day-occurance {
-          font-size: 13px;
+          font-size: 11px;
           line-height: 1;
-          margin-top: 5px;
+          margin-top: 0;
           opacity: .5;
+
+          @include above-sm() {
+            @include relative-size(font-size, 13);
+            @include relative-size(margin-top, 5);
+          }
         }
       }
 
       .image-article-time {
         background-color: $yellow;
         color: $green;
+        font-size: 14px;
+
+        @include above-sm() {
+          @include relative-size(font-size, 18);
+        }
       }
     }
   }

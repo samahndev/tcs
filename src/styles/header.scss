@@ -8,16 +8,17 @@
   z-index: 10;
 
   @include above-sm() {
-    height: 80px;
-    right: 40px;
-    top: 40px;
+    @include relative-size(height, 80);
+    @include relative-size(right, 40);
+    @include relative-size(top, 40);
   }
 
   .header-logo {
     padding: 0 15px;
 
     @include above-sm() {
-      padding: 0 30px;
+      $value: 0 30;
+      @include relative-size(padding, $value);
     }
 
     img {
@@ -25,8 +26,8 @@
       width: 20px;
 
       @include above-sm() {
-        margin-top: 10px;
-        width: 45px;
+        @include relative-size(margin-top, 10);
+        @include relative-size(width, 45);
       }
     }
   }
@@ -124,7 +125,9 @@
       margin-left: 18px;
 
       @include above-sm() {
-        display: block;
+        @include relative-size(margin-left, 18);
+        @include relative-size(width, 23);
+        display: inline-block;
       }
     }
   }
@@ -171,7 +174,8 @@
           text-align: left;
 
           @include above-sm() {
-            padding: 0 30px;
+            $value: 0 30;
+            @include relative-size(padding, $value);
           }
 
           &:hover {
@@ -202,6 +206,10 @@
         position: absolute;
         top: 80px;
         z-index: 1000;
+
+        @include above-sm() {
+          @include relative-size(top, 80);
+        }
       }
 
       .nav-list-on-click {
@@ -211,6 +219,11 @@
         padding: 50px 40px;
         width: 370px;
 
+        @include above-sm() {
+          $value: 50 40;
+          @include relative-size(padding, $value);
+        }
+
         &.active {
           display: block;
         }
@@ -218,10 +231,19 @@
         p {
           @extend .font-sm;
           margin: 15px 0 0;
+
+          @include above-sm() {
+            $value: 15 0 0;
+            @include relative-size(margin, $value);
+          }
         }
 
         p:first-of-type {
           margin-top: 30px;
+
+          @include above-sm() {
+            @include relative-size(margin-top, 30);
+          }
         }
 
         .nav-list-on-click-title {
@@ -231,12 +253,21 @@
         .btn {
           @extend .btn;
           margin-top: 20px;
+
+          @include above-sm() {
+            @include relative-size(margin-top, 20);
+          }
         }
 
         .nav-list-on-click-close-button {
           position: absolute;
           top: 20px;
           right: 20px;
+
+          @include above-sm() {
+            @include relative-size(top, 20);
+            @include relative-size(right, 20);
+          }
         }
       }
 
@@ -248,6 +279,12 @@
           height: 80px;
           padding: 0 30px;
           width: 100%;
+
+          @include above-sm() {
+            $value: 0 30;
+            @include relative-size(padding, $value);
+            @include relative-size(height, 80);
+          }
         }
       }
     }

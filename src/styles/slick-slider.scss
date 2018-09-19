@@ -7,35 +7,74 @@
 }
 
 #weekly-specials {
+  margin-bottom: 35px;
+
+  @include above-sm() {
+    margin-bottom: 0;
+  }
+
   .slick-slide {
     .image-article-content-copy {
-      height: 180px;
+      height: auto;
       overflow: hidden;
+      padding-bottom: 40px;
+
+      @include above-sm() {
+        @include relative-size(height, 180);
+        padding-bottom: 0;
+      }
     }
   }
 
   .slick-arrow {
     background-color: $ivory;
     border: 0;
-    height: 60px;
+    height: 45px;
     line-height: 0;
     padding: 0;
-    right: 40px;
-    top: 40px;
-    width: 60px;
+    right: 20px;
+    top: 20px;
+    width: 45px;
+
+    @include above-sm() {
+      @include relative-size(height, 60);
+      @include relative-size(right, 40);
+      @include relative-size(top, 40);
+      @include relative-size(width, 60);
+    }
 
     &.slick-prev {
-      right: 100px;
+      right: 65px;
+
+      @include above-sm() {
+        @include relative-size(right, 100);
+      }
 
       img {
         transform: rotate(180deg);
       }
     }
+
+    img {
+      width: 10px;
+
+      @include above-sm() {
+        width: 14px;
+        @include relative-size(width, 14);
+      }
+    }
   }
 
   .slick-dots {
-    bottom: 40px;
-    left: calc(50% + 80px);
+    bottom: auto;
+    left: 40px;
+    top: calc(70vw - 20px);
+
+    @include above-sm() {
+      @include relative-size(bottom, 40);
+      left: calc(50% + 5.555555vw);
+      top: auto;
+    }
 
     li {
       display: inline-block;

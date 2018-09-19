@@ -7,7 +7,15 @@ class InstagramFeed extends Component {
       arrows: false,
       dots: true,
       slidesToShow: 4,
-      slidesToSlide: 1
+      slidesToSlide: 1,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+      ]
     };
 
     return (

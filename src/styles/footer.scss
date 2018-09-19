@@ -2,14 +2,41 @@
   @extend .font-sm;
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 60px 30px;
+  padding: 30px;
+
+  @include above-sm() {
+    flex-direction: row;
+    $value: 60 30;
+    @include relative-size(font-size, $value);
+  }
+
+  img {
+    margin: 20px 0;
+    width: 20px;
+
+    @include above-sm() {
+      margin: 0;
+      @include relative-size(width, 45);
+    }
+  }
 
   .footer-list {
     display: flex;
+    flex-direction: column;
+
+    @include above-sm() {
+      flex-direction: row;
+    }
 
     li:first-child {
-      margin-right: 30px;
+      margin: 0 0 15px;
+
+      @include above-sm() {
+        $value: 0 30 0 0;
+        @include relative-size(margin, $value);
+      }
     }
   }
 }

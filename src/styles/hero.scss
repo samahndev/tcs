@@ -25,12 +25,14 @@
     z-index: 1;
 
     @include above-sm() {
-      margin: 80px 160px 0;
+      $value: 80 160 0;
+      @include relative-size(margin, $value);
     }
   }
 
   .hero-content-title {
-    margin: 80px 0 0;
+    margin: 0;
+    @include relative-size(margin-top, 80);
   }
 
   .hero-content-address {
@@ -40,13 +42,14 @@
    margin: 30px 0 0;
 
    @include above-sm() {
-    font-size: 28px;
-    line-height: 33px;
+    @include relative-size(font-size, 28);
+    @include relative-size(line-height, 33);
+    @include relative-size(margin-top, 30);
    }
   }
 
   .hero-content-opening-hours {
     @extend .font-sm;
-    margin: 10px 0 0;
+    @include relative-size(margin-top, 10);
   }
 }

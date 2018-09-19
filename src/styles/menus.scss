@@ -1,9 +1,10 @@
 .menus {
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
+  margin-top: 40px;
 
   @include above-sm() {
+    @include relative-size(margin-top, 40);
     flex-direction: row;
   }
 
@@ -27,6 +28,10 @@
 
     .menu-content {
       padding: 30px;
+
+      @include above-sm() {
+        @include relative-size(padding, 30);
+      }
     }
 
     .menu-image {
@@ -49,6 +54,10 @@
     .menu-link {
       @extend .font-sm;
       margin-top: 20px;
+
+      @include above-sm() {
+        @include relative-size(margin-top, 20);
+      }
     }
 
     .menu-time {

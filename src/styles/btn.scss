@@ -5,6 +5,11 @@
   padding: 10px 30px;
   text-decoration: none;
 
+  @include above-sm() {
+    $value: 10 30;
+    @include relative-size(padding, $value);
+  }
+
   &.btn-green {
     border-color: $green;
     border-width: 2.5px;
