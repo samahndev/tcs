@@ -1,6 +1,11 @@
 .menus {
   display: flex;
+  flex-direction: column;
   padding-top: 40px;
+
+  @include above-sm() {
+    flex-direction: row;
+  }
 
   .menu {
     flex: 1;
@@ -28,7 +33,11 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 17vw;
+      height: 70vw;
+
+      @include above-sm() {
+        height: 17vw;
+      }
     }
 
     .menu-name {

@@ -28,9 +28,9 @@ class IndexPage extends Component {
         </Section>
 
         {/* Menus */}
-        {/* <Section title="menu">
+        <Section title="menu">
           <Menus />
-        </Section> */}
+        </Section>
 
         {/* Weekly promo */}
         {/* <Section title="weekly-specials">
