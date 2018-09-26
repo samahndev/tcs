@@ -69,6 +69,13 @@
         }
       }
     }
+
+    .contact-us-newsletter-message {
+      a {
+        @include underlined-link(7, -2);
+        color: $ivory;
+      }
+    }
   }
 
   .contact-us-image {

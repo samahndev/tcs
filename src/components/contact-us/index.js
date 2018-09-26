@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+import addToMailchimp from 'gatsby-plugin-mailchimp';
 
 class ContactUs extends Component {
   state = {
@@ -38,28 +39,20 @@ class ContactUs extends Component {
     });
   }
 
-  handleFormSubmit = e => {
+  handleFormSubmit = async (e) => {
     e.preventDefault();
 
     this.setState({
       formSending: true
     });
 
-    // Mock behaviour
-    setTimeout(() => {
-      this.setState(
-        {
-          formSending: false,
-          formResolved: true,
-          formResolvedMessage: `Successfully subscribed!`
-        },
-        () => {
-          setTimeout(() => {
-            this.setState({ formResolved: false }, () => { this.resetForm() });
-          }, 3000)
-        }
-      );
-    }, 1500);
+    const result = await addToMailchimp(this.state.newUser.email);
+
+    this.setState({
+      formSending: false,
+      formResolved: true,
+      formResolvedMessage: result.msg
+    });
   }
 
   validateField(fieldName, value) {
@@ -136,9 +129,10 @@ class ContactUs extends Component {
               />
             </form>
             :
-            <p className="contact-us-newsletter-message">
-              {this.state.formResolvedMessage}
-            </p>
+            <p
+              className="contact-us-newsletter-message"
+              dangerouslySetInnerHTML={{ __html: this.state.formResolvedMessage }}
+            />
           }
         </div>
         <div className="contact-us-image">
