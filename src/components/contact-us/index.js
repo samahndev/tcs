@@ -39,20 +39,21 @@ class ContactUs extends Component {
     });
   }
 
-  handleFormSubmit = async (e) => {
+  handleFormSubmit = e => {
     e.preventDefault();
 
     this.setState({
       formSending: true
     });
 
-    const result = await addToMailchimp(this.state.newUser.email);
-
-    this.setState({
-      formSending: false,
-      formResolved: true,
-      formResolvedMessage: result.msg
-    });
+    addToMailchimp(this.state.newUser.email)
+    .then(result => {
+      this.setState({
+        formSending: false,
+        formResolved: true,
+        formResolvedMessage: result.msg
+      });
+    })
   }
 
   validateField(fieldName, value) {
@@ -116,17 +117,17 @@ class ContactUs extends Component {
                 value={this.state.newUser.email}
                 onChange={this.handleInput}
               />
-              <input
+              <button
                 className={cx({
                   'btn': true,
                   'btn-disabled': !this.state.formValid,
                   'btn-sending': this.state.formSending
                 })}
-                type="button"
                 onClick={this.handleFormSubmit}
-                value="Subscribe"
                 disabled={!this.state.formValid || this.state.formSending}
-              />
+              >
+                Subscribe
+              </button>
             </form>
             :
             <p
