@@ -13,6 +13,13 @@
     @include relative-size(top, 40);
   }
 
+  > .header-link {
+    &:before,
+    &:after {
+      content: none !important;
+    }
+  }
+
   .header-logo {
     padding: 0 15px;
 
@@ -98,26 +105,45 @@
   }
 
   .header-link {
+    background-color: white;
     cursor: pointer;
     height: 100%;
+    position: relative;
+    transition: background-color .3s $cubicBezier;
+    
+    &:after {
+      background-color: $yellow;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+    }
 
-    &:hover,
+    &:after {
+      height: 0;
+      transition: height .3s $cubicBezier;
+      width: 100%;
+    }
+    
     &.active {
-      a,
-      button {
-        background-color: $yellow;
+      &:after {
+        height: 100%;
       }
     }
 
     &:hover {
+      background-color: $ivory;//rgba($offWhite, .3);
+
       .header-link-icon {
-        transform: rotate(180deg);
+        transform: translateY(1px);
       }
     }
 
     a,
     button {
       background-color: transparent;
+      position: relative;
+      z-index: 1;
 
       &:before {
         content: none;
@@ -127,6 +153,9 @@
     .header-link-icon {
       display: none;
       margin-left: 18px;
+      position: relative;
+      transform: translateY(0);
+      transition: transform .2s $cubicBezier;
 
       @include above-sm() {
         @include relative-size(margin-left, 18);
@@ -203,7 +232,35 @@
 
       .nav-list-highlight {
         background-color: $green;
-        color: white;
+        position: relative;
+        
+        &:after {
+          background-color: shade($green, 20%);
+          bottom: 0;
+          content: '';
+          left: 0;
+          position: absolute;
+          z-index: 0;
+        }
+
+        &:after {
+          height: 0;
+          transition: height .2s $cubicBezier;
+          width: 100%;
+        }
+
+        &.active {
+          &:after {
+            height: 100%;
+          }
+        }
+
+        button {
+          background-color: transparent;
+          color: white;
+          position: relative;
+          z-index: 1;
+        }
       }
 
       .nav-list-on-click,
@@ -282,19 +339,19 @@
         width: 100%;
 
         li button {
-          background-color: $ivory;
+          background-color: $offWhite;
           height: 80px;
           padding: 0 30px;
           width: 100%;
-
-          &:hover {
-            background-color: $yellow;
-          }
 
           @include above-sm() {
             $value: 0 30;
             @include relative-size(padding, $value);
             @include relative-size(height, 80);
+          }
+
+          &:hover {
+            // background-color: $ivory;
           }
         }
       }

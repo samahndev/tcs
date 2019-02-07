@@ -44,11 +44,11 @@ class Header extends Component {
         </label>
         <nav className="nav">
           <ul className="nav-list">
-            <li>
-              <button
-                className="nav-list-highlight"
-                onClick={this.openBookingForm}
-              >
+            <li className={cx({
+              'nav-list-highlight': true,
+              'active': this.state.isBooking
+            })}>
+              <button onClick={this.openBookingForm}>
                 Book a Table
               </button>
               <div className={cx({
@@ -83,10 +83,12 @@ class Header extends Component {
                 <a className="header-link-item">
                   <button>
                     Menu
-                    <img className="header-link-icon" src={expandButton} alt="" />
+                    <div className="header-link-icon">
+                      <img src={expandButton} alt="" />
+                    </div>
                   </button>
                   <ul className="nav-list-on-hover">
-                    <li><button onClick={this.menuClickHandler}>Breakfast</button></li>
+                  <li><button onClick={this.menuClickHandler}>Breakfast</button></li>
                     <li><button onClick={this.menuClickHandler}>Lunch</button></li>
                     <li><button onClick={this.menuClickHandler}>Dinner</button></li>
                   </ul>
