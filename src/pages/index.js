@@ -23,7 +23,7 @@ class IndexPage extends Component {
           <ImageArticle
             image='https://via.placeholder.com/640x440/505a5e'
             heading="About the Candyshop"
-            copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p>"
+            copy="<p>Deftly blending European and Korean cuisine, The Candy Shop is an elegant all-day eatery within which to enjoy a unique take on Kiwi-food.</p>"
           />
         </Section>
 
@@ -34,16 +34,21 @@ class IndexPage extends Component {
 
         {/* Weekly promo */}
         <Section title="weekly-specials">
-          <WeeklySpecials />
+        <ImageArticle
+          image='https://via.placeholder.com/640x440/505a5e'
+          heading="Coffee by Camper"
+          copy="<p>With two-time New Zealand AeroPress Champion and owner of Camper Coffee, Woo Hyung Lee, onboard as head barista and roaster you can trust in your cup.</p><p>Embodying our belief that every element matters, we also roast our own seasonal single origin.</p>"
+          inverse
+        />
         </Section>
 
         {/* Functions */}
         <Section title="function">
           <ImageArticle
             image="https://via.placeholder.com/640x850/6b6967"
-            heading="About the Candyshop"
-            copy="<p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p><p>Tristique dictum numquam doloribus proin tellus commodo, nullam elit illum architecto lobortis risus neque ipsam commodo cras class deleniti quis eligendi, fugit proin laboris iaculis mollitia! Risus? Provident doloremque nibh, dignissim perferendis.</p><p>Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu. Aliquip, convallis faucibus facilisi, occaecati irure laborum bibendum mollis ullamco sollicitudin sed sociosqu.</p><p>Aliquip, convallis faucibus facilisi.</p>"
-            cta={{ link: 'mailto:hello@thecandyshopnz.com', text: 'Email us' }}
+            heading="Functions"
+            copy="<p>Want to bring all your friends?<br />We can accomodate functions and bookings.</p>"
+            cta={{ link: 'mailto:hello@thecandyshopnz.com', text: 'Just email us!' }}
           />
         </Section>
 

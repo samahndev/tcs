@@ -54,8 +54,7 @@
     }
 
     .menu-time,
-    .menu-desc,
-    .menu-link {
+    .menu-desc {
       @extend .font-sm;
       margin-top: 20px;
 
@@ -65,12 +64,21 @@
     }
 
     .menu-time {
-      display: inline-block;
+      display: block;
       margin-top: 10px;
       opacity: .3;
 
       @include above-sm() {
         @include relative-size(margin-top, 10);
+      }
+    }
+
+    .menu-link {
+      display: inline-block;
+      margin-top: 43px;
+
+      @include above-sm() {
+        @include relative-size(margin-top, 46);
       }
     }
   }

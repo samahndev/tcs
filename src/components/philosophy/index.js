@@ -4,7 +4,7 @@ export default () => (
   <div className="philosophy">
     <h1 className="philosophy-heading">A place to come and treat yourself</h1>
     <p className="philosophy-copy">
-      Tortor tenetur viverra nonummy irure. Excepturi arcu inventore quibusdam magnis quo soluta fugit. Tortor tenetur viverra nonummy irure.<br />Excepturi arcu inventore quibusdam magnis quo soluta fugit.
+    When the boys were young, they spent much time in neighborhood candy shops, happy and smiling. They wanted to recreate that emotion for everyone.
     </p>
   </div>
 );

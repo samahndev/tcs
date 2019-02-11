@@ -4,22 +4,19 @@ const menus = [
   {
     image: 'https://via.placeholder.com/360x250/c3b284',
     name: 'Breakfast',
-    time: 'Until 3pm',
-    desc: 'Quo scelerisque diamlorem nibh hac doloremque ullam hac facere voluptatum eos aenean facilisis. facere voluptatum eos aenean facilisis.',
+    time: '7am - 11:30am | Mon - Fri',
     link: '#',
   },
   {
     image: 'https://via.placeholder.com/360x250/81775c',
-    name: 'Breakfast',
-    time: 'Until 3pm',
-    desc: 'Quo scelerisque diamlorem nibh hac doloremque ullam hac facere voluptatum eos aenean facilisis.',
+    name: 'Lunch & Dinner',
+    time: '11:30am - Close | Mon - Fri,<br />3pm - Close | Sat',
     link: '#',
   },
   {
     image: 'https://via.placeholder.com/360x250/7d6944',
-    name: 'Breakfast',
-    time: 'Until 3pm',
-    desc: 'Quo scelerisque diamlorem nibh hac doloremque ullam hac facere voluptatum eos aenean facilisis.',
+    name: 'Weekend',
+    time: '8am - 3pm | Sat &nbsp; Sun',
     link: '#',
   },
 ];
@@ -38,8 +35,10 @@ export default props => (
           <h3 className="menu-name">
             <a href={menu.link} target="_blank">{menu.name}</a>
           </h3>
-          <small className="menu-time">{menu.time}</small>
-          <p className="menu-desc">{menu.desc}</p>
+          <small
+            className="menu-time"
+            dangerouslySetInnerHTML={{ __html: menu.time }}
+           />
           <a className="menu-link" href={menu.link} target="_blank">Download</a>
         </div>
       </div>

@@ -101,7 +101,7 @@ class ContactUs extends Component {
           <div className="contact-us-newsletter-content">
             <h3>Don't miss any updates</h3>
             <p>
-              Nam urna condimentum aliqua, perferendis turpis sapiente blandit, doloribus minus ullam taciti eleifend.
+            Want the latest news from The Candy Shop team?<br />Pop your email in here!
             </p>
           </div>
           {!this.state.formResolved ?

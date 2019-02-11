@@ -97,7 +97,7 @@ class Header extends Component {
             </li>
             <li>
               <Link to="weekly-specials" className="header-link">
-                <button>Weekly Specials</button>
+                <button>Coffee by Camper</button>
               </Link>
             </li>
             <li>
