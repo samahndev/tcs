@@ -59,6 +59,7 @@
     span {
       color: white;
       margin: 0 4px;
+      opacity: .6;
 
       @include above-sm() {
         $values: 0 4;
