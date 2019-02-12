@@ -12,12 +12,13 @@
 
   .philosophy-copy {
     margin: 40px 0;
-    max-width: 600px;
+    max-width: 680px;
 
     @include above-sm() {
       $value: 40 0;
       @include relative-size(margin, $value);
-      @include relative-size(max-width, 600);
+      @include relative-size(max-width, 680);
+      @include relative-size(line-height, 30);
     }
   }
 }

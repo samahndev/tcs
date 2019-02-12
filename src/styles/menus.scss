@@ -69,7 +69,18 @@
       opacity: .3;
 
       @include above-sm() {
-        @include relative-size(margin-top, 10);
+        @include relative-size(margin-top, 20);
+      }
+
+      span {
+        color: inherit;
+        margin: 0 4px;
+        opacity: .6;
+  
+        @include above-sm() {
+          $values: 0 4;
+          @include relative-size(margin, $values);  
+        }
       }
     }
 

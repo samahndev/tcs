@@ -14,7 +14,9 @@ export default () => (
         Newmarket, Auckland
       </p>
       <p className="hero-content-opening-hours">
-        Monday - Friday | 7AM-10PM Saturday & Sunday | 8AM-10PM
+        Monday <span>/</span> 7am <span>-</span> 4am<br />
+        Tuesday <span>-</span> Friday <span>/</span> 7am <span>-</span> 9pm<br />
+        Saturday <span>/</span> 8am <span>-</span> 9pm<span>, </span>Sunday <span>/</span> 8am <span>-</span> 4pm
       </p>
     </div>
   </div>

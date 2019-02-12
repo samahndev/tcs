@@ -32,7 +32,7 @@
 
   .hero-content-title {
     margin: 0;
-    @include relative-size(margin-top, 80);
+    @include relative-size(margin-top, 60);
   }
 
   .hero-content-address {
@@ -50,6 +50,20 @@
 
   .hero-content-opening-hours {
     @extend .font-sm;
-    @include relative-size(margin-top, 10);
+    @include relative-size(margin-top, 16);
+
+    @include above-sm() {
+      @include relative-size(margin-top, 13);
+    }
+
+    span {
+      color: white;
+      margin: 0 4px;
+
+      @include above-sm() {
+        $values: 0 4;
+        @include relative-size(margin, $values);  
+      }
+    }
   }
 }

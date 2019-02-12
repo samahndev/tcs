@@ -25,6 +25,10 @@
 
     p {
       @extend .font-sm;
+
+      @include above-sm() {
+        @include relative-size(line-height, 26);
+      }
     }
 
     .contact-us-newsletter-form {

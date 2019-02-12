@@ -50,7 +50,10 @@ class ImageArticle extends Component {
           </div>
           <div className="image-article-content">
             <div className="image-article-content-wrapper">
-              <h2 className="image-article-content-title">{heading}</h2>
+              <h2
+                className="image-article-content-title"
+                dangerouslySetInnerHTML={{ __html: heading }}
+              />
               <div
                 className="image-article-content-copy"
                 dangerouslySetInnerHTML={{ __html: copy }}

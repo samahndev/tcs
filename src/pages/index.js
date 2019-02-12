@@ -23,7 +23,7 @@ class IndexPage extends Component {
           <ImageArticle
             image='https://via.placeholder.com/640x440/505a5e'
             heading="About the Candyshop"
-            copy="<p>Deftly blending European and Korean cuisine, The Candy Shop is an elegant all-day eatery within which to enjoy a unique take on Kiwi-food.</p>"
+            copy="<p>Deftly blending European and Korean cuisine, The Candyshop is an elegant all-day eatery within which to enjoy a unique take on Kiwi-food.</p>"
           />
         </Section>
 
@@ -33,7 +33,7 @@ class IndexPage extends Component {
         </Section>
 
         {/* Weekly promo */}
-        <Section title="weekly-specials">
+        <Section title="coffee-by-camper">
         <ImageArticle
           image='https://via.placeholder.com/640x440/505a5e'
           heading="Coffee by Camper"
@@ -43,12 +43,12 @@ class IndexPage extends Component {
         </Section>
 
         {/* Functions */}
-        <Section title="function">
+        <Section title="table-team">
           <ImageArticle
             image="https://via.placeholder.com/640x850/6b6967"
-            heading="Functions"
+            heading="Table Team"
             copy="<p>Want to bring all your friends?<br />We can accomodate functions and bookings.</p>"
-            cta={{ link: 'mailto:hello@thecandyshopnz.com', text: 'Just email us!' }}
+            cta={{ link: 'mailto:hello@thecandyshopnz.com', text: 'Just email us' }}
           />
         </Section>
 

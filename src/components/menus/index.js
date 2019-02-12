@@ -4,19 +4,19 @@ const menus = [
   {
     image: 'https://via.placeholder.com/360x250/c3b284',
     name: 'Breakfast',
-    time: '7am - 11:30am | Mon - Fri',
+    time: 'Mon<span>-</span>Fri <span>/</span> 7am<span>-</span>11:30am',
     link: '#',
   },
   {
     image: 'https://via.placeholder.com/360x250/81775c',
     name: 'Lunch & Dinner',
-    time: '11:30am - Close | Mon - Fri,<br />3pm - Close | Sat',
+    time: 'Mon<span>-</span>Fri <span>/</span> 11:30am<span>-</span>Close<br />Sat <span>/</span> 3pm<span>-</span>Close',
     link: '#',
   },
   {
     image: 'https://via.placeholder.com/360x250/7d6944',
     name: 'Weekend',
-    time: '8am - 3pm | Sat &nbsp; Sun',
+    time: 'Sat & Sun <span>/</span> 8am<span>-</span>3pm',
     link: '#',
   },
 ];

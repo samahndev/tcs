@@ -55,9 +55,9 @@ class Header extends Component {
                 'nav-list-on-click': true,
                 'active': this.state.isBooking
               })}>
-                <h3 className="nav-list-on-click-title">We take reservations for 50% of our dining room</h3>
-                <p>We welcome walk-ins anytime of the day and run a very efficient waitlist system.</p>
-                <p>To book a table, please send us an email with information about the number of people, the required date and time.</p>
+                <h3 className="nav-list-on-click-title">We don’t want anyone to miss out.</h3>
+                <p>If you would like to bring the whole team in, or have us cater to you, we can accomodate.</p>
+                <p>Just send us an email and lets get chatting!</p>
                 <a
                   className="btn"
                   href="mailto:hello@thecandyshop.co.nz"
@@ -96,13 +96,13 @@ class Header extends Component {
               </Link>
             </li>
             <li>
-              <Link to="weekly-specials" className="header-link">
+              <Link to="coffee-by-camper" className="header-link">
                 <button>Coffee by Camper</button>
               </Link>
             </li>
             <li>
-              <Link to="function" className="header-link">
-                <button>Functions</button>
+              <Link to="table-team" className="header-link">
+                <button>Table Team</button>
               </Link>
             </li>
             <li>
