@@ -94,6 +94,7 @@
       background-size: cover;
       background-position: center top;
       height: 70vw;
+      position: relative;
 
       @include above-sm() {
         height: 100%;

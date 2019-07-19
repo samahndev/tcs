@@ -45,10 +45,10 @@ class PreloadImage extends React.Component {
     this.preloader.src = this.props.src;
   }
 
-  componentWillUnmount() {
-    if (this.observer) this.observer.disconnect();
-    this.preloader.onload = null;
-  }
+  // componentWillUnmount() {
+  //   if (this.observer) this.observer.disconnect();
+  //   this.preloader.onload = null;
+  // }
 
   render() {
     return (

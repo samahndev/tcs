@@ -15,6 +15,7 @@ class InstagramFeed extends Component {
       dots: true,
       slidesToShow: 4,
       slidesToSlide: 1,
+      lazyLoad: 'ondemand',
       responsive: [
         {
           breakpoint: 768,

@@ -3,6 +3,9 @@ import cx from 'classnames';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import Fade from 'react-reveal/Fade'
 
+import PreloadImage from '../preload-image'
+import contactImage from '../../images/41274643_307549579828965_5350101481835028502_n.jpg'
+
 class ContactUs extends Component {
   state = {
     newUser: {
@@ -139,11 +142,10 @@ class ContactUs extends Component {
             }
           </div>
           <div className="contact-us-image">
-            <div
+            <PreloadImage
               className="contact-us-image-item"
-              style={{
-                backgroundImage: 'url(https://via.placeholder.com/640x500/6b6d65)'
-              }}
+              src={contactImage}
+              lazy
             />
           </div>
           <div className="contact-us-map">
