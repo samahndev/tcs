@@ -83,15 +83,15 @@ class Header extends Component {
                 <a className="header-link-item">
                   <button>
                     Menu
-                    <div className="header-link-icon">
+                    {/* <div className="header-link-icon">
                       <img src={expandButton} alt="" />
-                    </div>
+                    </div> */}
                   </button>
-                  <ul className="nav-list-on-hover">
+                  {/* <ul className="nav-list-on-hover">
                   <li><button onClick={this.menuClickHandler}>Breakfast</button></li>
                     <li><button onClick={this.menuClickHandler}>Lunch</button></li>
                     <li><button onClick={this.menuClickHandler}>Dinner</button></li>
-                  </ul>
+                  </ul> */}
                 </a>
               </Link>
             </li>

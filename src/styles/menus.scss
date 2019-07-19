@@ -4,7 +4,7 @@
   margin-top: 40px;
 
   @include above-sm() {
-    @include relative-size(margin-top, 40);
+    @include relative-size(margin-top, 80);
     flex-direction: row;
   }
 
