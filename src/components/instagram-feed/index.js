@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import Fade from 'react-reveal/Fade'
 
 import slideImg1 from '../../images/41274643_307549579828965_5350101481835028502_n.jpg';
 import slideImg2 from '../../images/40125578_172244597002749_2629430466091729665_n.jpg';
@@ -26,23 +27,25 @@ class InstagramFeed extends Component {
 
     return (
       <div className="instagram-feed">
-        <Slider {...instaSettings}>
-          <div className="instagram-feed-item">
-            <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg1})`}} />
-          </div>
-          <div className="instagram-feed-item">
-            <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg2})`}} />
-          </div>
-          <div className="instagram-feed-item">
-            <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg3})`}} />
-          </div>
-          <div className="instagram-feed-item">
-            <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg4})`}} />
-          </div>
-          <div className="instagram-feed-item">
-            <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg5})`}} />
-          </div>
-        </Slider>
+        <Fade>
+          <Slider {...instaSettings}>
+            <div className="instagram-feed-item">
+              <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg1})`}} />
+            </div>
+            <div className="instagram-feed-item">
+              <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg2})`}} />
+            </div>
+            <div className="instagram-feed-item">
+              <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg3})`}} />
+            </div>
+            <div className="instagram-feed-item">
+              <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg4})`}} />
+            </div>
+            <div className="instagram-feed-item">
+              <div className="instagram-feed-item-image" style={{ backgroundImage: `url(${slideImg5})`}} />
+            </div>
+          </Slider>
+        </Fade>
       </div>
     );
   }

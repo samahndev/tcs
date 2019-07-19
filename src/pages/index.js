@@ -4,7 +4,6 @@ import Section from '../components/section';
 import Hero from '../components/hero';
 import ImageArticle from '../components/image-article';
 import Menus from '../components/menus';
-import WeeklySpecials from '../components/weekly-specials';
 import ContactUs from '../components/contact-us';
 import Philosophy from '../components/philosophy';
 import InstagramFeed from '../components/instagram-feed';

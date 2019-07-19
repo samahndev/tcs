@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade'
 
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -11,7 +12,9 @@ const Layout = ({ children }) => (
     <main>
       {children()}
     </main>
-    <Footer />
+    <Fade>
+      <Footer />
+    </Fade>
   </div>
 );
 
