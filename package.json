@@ -12,8 +12,10 @@
     "gatsby-plugin-sass": "^1.0.26",
     "normalize.css": "^8.0.0",
     "rc-scroll-anim": "^2.5.5",
+    "react-reveal": "^1.2.2",
     "react-slick": "^0.23.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "svg-loaders-react": "^2.0.0"
   },
   "keywords": [
     "gatsby"

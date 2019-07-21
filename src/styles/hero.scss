@@ -1,38 +1,66 @@
 .hero {
-  background: $green url('../images/petr-sevcovic-594807-unsplash.jpg') center center no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   position: relative;
+  background-color: $green;
+
+  .heroImage {
+    position: 'absolute';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 
   &:before {
-    background-color: rgba(black, .4);
+    background-color: rgba(black, .2);
     content: '';
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 0;
+    z-index: 1;
   }
 
   .hero-content {
     color: $offWhite;
     margin: 0 30px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    text-align: center;
 
     @include above-sm() {
       $value: 80 160 0;
       @include relative-size(margin, $value);
+      text-align: left;
     }
   }
 
+  .hero-loader {
+    width: 100%;
+    text-align: center;
+  }
+
   .hero-content-title {
-    margin: 0;
+    margin: 0 auto;
     @include relative-size(margin-top, 60);
+    width: 250px;
+
+    @include above-sm() {
+      width: auto;
+      margin: 0;
+    }
+
+    .hero-content-subtitle {
+      font-size: 23px;
+
+      @include above-sm() {
+        @include relative-size(font-size, 90);
+      }
+    }
   }
 
   .hero-content-address {
@@ -64,6 +92,20 @@
       @include above-sm() {
         $values: 0 4;
         @include relative-size(margin, $values);  
+      }
+    }
+
+    .hide-desktop {
+      @include above-sm() {
+        display: none;
+      }
+    }
+
+    .hide-mobile {
+      display: none;
+
+      @include above-sm() {
+        display: inline;
       }
     }
   }

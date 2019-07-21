@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+import Fade from 'react-reveal/Fade'
 
+import PreloadImage from '../preload-image'
 import { facebookShare, twitterShare, pinterestShare } from './share';
 
 import facebook from '../../images/facebook-icon.svg';
@@ -8,6 +10,7 @@ import twitter from '../../images/twitter-logo.svg';
 import pinterest from '../../images/pinterest-logo.svg';
 
 class ImageArticle extends Component {
+  state = { imageLoaded: false }
   render() {
     const {
       copy,
@@ -41,47 +44,48 @@ class ImageArticle extends Component {
                 </div>
               </div>
             }
-            <div
+            <PreloadImage
               className="image-article-image-item"
-              style={{
-                backgroundImage: `url(${image})`
-              }}
+              src={image}
+              lazy
             />
           </div>
           <div className="image-article-content">
-            <div className="image-article-content-wrapper">
-              <h2
-                className="image-article-content-title"
-                dangerouslySetInnerHTML={{ __html: heading }}
-              />
-              <div
-                className="image-article-content-copy"
-                dangerouslySetInnerHTML={{ __html: copy }}
-              />
-              {sharing &&
-                <div className="image-article-content-share">
-                  Share
-                  <img
-                    src={facebook}
-                    onClick={() => facebookShare()}
-                    alt=""
-                  />
-                  <img
-                    src={twitter}
-                    onClick={() => twitterShare()}
-                    alt=""
-                  />
-                  <img
-                    src={pinterest}
-                    onClick={() => pinterestShare()}
-                    alt=""
-                  />
-                </div>
-              }
-              {cta &&
-                <a className="btn btn-green" href={cta.link}>{cta.text}</a>
-              }
-            </div>
+            <Fade bottom cascade>
+              <div className="image-article-content-wrapper">
+                <h2
+                  className="image-article-content-title"
+                  dangerouslySetInnerHTML={{ __html: heading }}
+                />
+                <div
+                  className="image-article-content-copy"
+                  dangerouslySetInnerHTML={{ __html: copy }}
+                />
+                {sharing &&
+                  <div className="image-article-content-share">
+                    Share
+                    <img
+                      src={facebook}
+                      onClick={() => facebookShare()}
+                      alt=""
+                    />
+                    <img
+                      src={twitter}
+                      onClick={() => twitterShare()}
+                      alt=""
+                    />
+                    <img
+                      src={pinterest}
+                      onClick={() => pinterestShare()}
+                      alt=""
+                    />
+                  </div>
+                }
+                {cta &&
+                  <a className="btn btn-green" href={cta.link}>{cta.text}</a>
+                }
+              </div>
+            </Fade>
           </div>
         </div>
       </article>

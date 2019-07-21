@@ -6,11 +6,83 @@
   right: 20px;
   top: 20px;
   z-index: 10;
+  transition: all .3s $cubicBezier;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: rgba($green, .1);
+    width: 100%;
+    height: 100%;
+    transition: all .3s $cubicBezier;
+  }
 
   @include above-sm() {
     @include relative-size(height, 80);
     @include relative-size(right, 40);
     @include relative-size(top, 40);
+
+    &:after {
+      @include relative-size(left, 10);
+      @include relative-size(top, 10);
+    }
+  }
+
+  &.header-compact {
+    @include above-sm() {
+      @include relative-size(height, 40);
+      @include relative-size(right, 20);
+      @include relative-size(top, 20);
+
+      &:after {
+        @include relative-size(left, 5);
+        @include relative-size(top, 5);
+      }
+    }
+
+    .header-logo {
+      @include above-sm() {
+        $value: 0 15;
+        @include relative-size(padding, $value);
+      }
+
+      img {
+        @include above-sm() {
+          @include relative-size(margin-top, 7);
+          @include relative-size(width, 20);
+        }
+      }
+    }
+
+    .nav {
+      .nav-list {
+        li {
+          a,
+          button {
+            @include above-sm() {
+              $value: 0 15;
+              @include relative-size(padding, $value);
+              @include relative-size(font-size, 13);
+            }
+          }
+        }
+
+        .nav-list-on-click,
+        .nav-list-on-hover {
+          @include above-sm() {
+            @include relative-size(top, 20);
+          }
+
+          &.active {
+            @include above-sm() {
+              @include relative-size(top, 40);
+            }
+          }
+        }
+      }
+    }
   }
 
   > .header-link {
@@ -26,6 +98,7 @@
     @include above-sm() {
       $value: 0 30;
       @include relative-size(padding, $value);
+      transition: padding .3s $cubicBezier;
     }
 
     img {
@@ -35,6 +108,7 @@
       @include above-sm() {
         @include relative-size(margin-top, 10);
         @include relative-size(width, 45);
+        transition: all .3s $cubicBezier;
       }
     }
   }
@@ -55,6 +129,7 @@
   }
 
   .header-toggle {
+    background-color: white;
     height: 40px;
     position: relative;
     width: 40px;
@@ -101,15 +176,21 @@
   }
 
   .header-toggle-checkbox:checked + .header-toggle + .nav {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    top: 0;
   }
 
   .header-link {
-    background-color: white;
+    background-color: $ivory;
     cursor: pointer;
     height: 100%;
     position: relative;
     transition: background-color .3s $cubicBezier;
+
+    @include above-sm() {
+      background-color: white;
+    }
     
     &:after {
       background-color: $yellow;
@@ -132,11 +213,15 @@
     }
 
     &:hover {
-      background-color: $ivory;//rgba($offWhite, .3);
+      background-color: $ivory;
 
       .header-link-icon {
         transform: translateY(1px);
       }
+    }
+
+    &.header-logo-wrapper {
+      background-color: white;
     }
 
     a,
@@ -166,21 +251,25 @@
   }
 
   .nav {
-    background-color: ivory;
-    display: none;
+    background-color: $ivory;
+    opacity: 0;
+    visibility: hidden;
     height: 100%;
     position: fixed;
     left: 0;
-    top: 0;
+    top: -40px;
     width: 100%;
+    transition: all .3s $cubicBezier;
 
     @include above-sm() {
       background-color: white;
-      display: block;
+      opacity: 1;
+      visibility: visible;
       position: relative;
       left: auto;
       top: auto;
       width: auto;
+      transition: none;
     }
 
     .nav-list {
@@ -208,10 +297,12 @@
           padding: 20px 30px;
           position: relative;
           text-align: left;
+          width: 100%;
 
           @include above-sm() {
             $value: 0 30;
             @include relative-size(padding, $value);
+            transition: padding .3s $cubicBezier;
           }
 
           &:hover {
@@ -265,31 +356,41 @@
 
       .nav-list-on-click,
       .nav-list-on-hover {
-        display: none;
         left: 0;
         position: absolute;
-        top: 80px;
-        z-index: 1000;
+        top: 50px;
+        z-index: 2;
+        transition: all .3s $cubicBezier;
+        opacity: 0;
+        visibility: hidden;
 
         @include above-sm() {
-          @include relative-size(top, 80);
+          @include relative-size(top, 60);
+          z-index: 0;
         }
       }
 
       .nav-list-on-click {
-        background-color: $green;
+        background-color: shade($green, 10%);//$green;
         color: $offWhite;
         left: auto;
-        padding: 50px 40px;
-        width: 370px;
+        padding: 50px 30px;
+        width: 100%;
 
         @include above-sm() {
           $value: 50 40;
           @include relative-size(padding, $value);
+          @include relative-size(width, 370);
         }
 
         &.active {
-          display: block;
+          opacity: 1;
+          visibility: visible;
+          top: 57px;
+
+          @include above-sm() {
+            @include relative-size(top, 80);
+          }
         }
 
         p {
@@ -317,6 +418,7 @@
         .btn {
           @extend .btn;
           margin-top: 20px;
+          width: auto;
 
           @include above-sm() {
             @include relative-size(margin-top, 32);
@@ -324,9 +426,29 @@
         }
 
         .nav-list-on-click-close-button {
+          cursor: pointer;
           position: absolute;
           top: 20px;
           right: 20px;
+          width: 20px;
+          height: 20px;
+
+          span {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: white;
+            transform-origin: center;
+            top: calc(50% - 1px);
+          }
+
+          span:first-child {
+            transform: rotate(45deg);
+          }
+
+          span:last-child {
+            transform: rotate(-45deg);
+          }
 
           @include above-sm() {
             @include relative-size(top, 20);
