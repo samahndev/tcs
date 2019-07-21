@@ -32,14 +32,16 @@
     }
 
     .contact-us-newsletter-form {
-      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
 
       .form-input {
         @extend .font-sm;
         background-color: transparent;
         border: 0;
         border-bottom: 2px solid $ivory;
-        color: rgba($ivory, .4);
+        color: $ivory;
         outline: none;
         padding: 8px 0;
         width: 100%;
@@ -62,6 +64,12 @@
         background-color: transparent;
         cursor: pointer;
         margin-top: 20px;
+        width: 150px;
+        height: 42px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         @include above-sm() {
           @include relative-size(margin-top, 20);
@@ -75,9 +83,12 @@
     }
 
     .contact-us-newsletter-message {
+      line-height: 1.3;
+
       a {
-        @include underlined-link(7, -2);
+        // @include underlined-link(7, -2);
         color: $ivory;
+        text-decoration: underline;
       }
     }
   }
@@ -117,6 +128,12 @@
 
       @include above-sm() {
         height: 18.5vw;
+      }
+
+      iframe {
+        border: 0;
+        width: 100%;
+        height: 100%;
       }
     }
 

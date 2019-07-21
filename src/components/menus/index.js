@@ -41,7 +41,7 @@ export default props => (
               className="menu-time"
               dangerouslySetInnerHTML={{ __html: menu.time }}
             />
-            <a className="menu-link" href={menu.link} target="_blank">Download</a>
+            <a className="menu-link" href={menu.link} target="_blank">Download menu</a>
           </div>
         </div>
       ))}

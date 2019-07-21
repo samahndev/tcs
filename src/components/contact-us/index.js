@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import Fade from 'react-reveal/Fade'
+import * as SVGLoaders from 'svg-loaders-react';
 
 import PreloadImage from '../preload-image'
 import contactImage from '../../images/41274643_307549579828965_5350101481835028502_n.jpg'
@@ -21,7 +22,8 @@ class ContactUs extends Component {
     formValid: false,
     formSending: false,
     formResolved: false,
-    formResolvedMessage: ''
+    formResolvedMessage: '',
+    formResult: null
   };
 
   resetForm() {
@@ -55,7 +57,8 @@ class ContactUs extends Component {
       this.setState({
         formSending: false,
         formResolved: true,
-        formResolvedMessage: result.msg
+        formResolvedMessage: result.msg,
+        formResult: result.result
       });
     })
   }
@@ -109,16 +112,27 @@ class ContactUs extends Component {
                 Want the latest news from The Candy Shop team?<br />Pop your email in here.
               </p>
             </div>
-            {!this.state.formResolved ?
+            {this.state.formResolved &&
+              <Fade left>
+                <span>
+                  <small
+                    className="contact-us-newsletter-message"
+                    dangerouslySetInnerHTML={{ __html: this.state.formResolvedMessage }}
+                  />
+                  &nbsp;{this.state.formResult === 'success' ? <span>👍</span> : <span>🤔</span>}
+                </span>
+              </Fade>
+            }
+            {this.state.formResult !== 'success' &&
               <form className="contact-us-newsletter-form">
                 <input
                   className={cx({
                     'form-input': true,
-                    'form-input-error': !this.hasError(this.state.formErrors.email)
+                    'form-input-error': !this.hasError(this.state.formErrors.email) || this.state.formResult === 'error'
                   })}
                   type="email"
                   name="email"
-                  placeholder="Email address"
+                  placeholder="Enter your email address"
                   value={this.state.newUser.email}
                   onChange={this.handleInput}
                 />
@@ -131,14 +145,9 @@ class ContactUs extends Component {
                   onClick={this.handleFormSubmit}
                   disabled={!this.state.formValid || this.state.formSending}
                 >
-                  Subscribe
+                  {this.state.formSending ? <SVGLoaders.TailSpin transform="scale(.5)" /> : 'Subscribe'}
                 </button>
               </form>
-              :
-              <p
-                className="contact-us-newsletter-message"
-                dangerouslySetInnerHTML={{ __html: this.state.formResolvedMessage }}
-              />
             }
           </div>
           <div className="contact-us-image">
@@ -149,14 +158,11 @@ class ContactUs extends Component {
             />
           </div>
           <div className="contact-us-map">
-            <div
-              className="contact-us-map-image"
-              style={{
-                backgroundImage: 'url(https://via.placeholder.com/430x250/ede5d9)'
-              }}
-            />
+            <div className="contact-us-map-image">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.938056354845!2d174.77496251493363!3d-36.867901488283266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4876eac1be55%3A0xb036d22a9e733814!2s2-8+Osborne+St%2C+Newmarket%2C+Auckland+1023!5e0!3m2!1sen!2snz!4v1563712045478!5m2!1sen!2snz" width="400" height="300" frameBorder="0" allowFullScreen></iframe>
+            </div>
             <div className="contact-us-map-content">
-              <a href="#">
+              <a href="https://goo.gl/maps/pszT1c2WuyZS396A9" target="_blank">
                 <span>2-8 Osbourne Street,</span>
                 <br />
                 <span>Newmarket, Auckland</span>
