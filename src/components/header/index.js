@@ -93,12 +93,13 @@ class Header extends Component {
                 >
                   Send an email
                 </a>
-                <span
+                <div
                   className="nav-list-on-click-close-button"
                   onClick={this.closeBookingForm}
                 >
-                  X
-                </span>
+                  <span />
+                  <span />
+                </div>
               </div>
             </li>
             <li>
