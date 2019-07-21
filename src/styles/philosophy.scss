@@ -8,6 +8,16 @@
 
   .philosophy-heading {
     margin: 0;
+    width: 250px;
+    font-size: 23px;
+    line-height: 27px;
+
+    @include above-sm() {
+      width: auto;
+      @include relative-size(font-size, 90);
+      @include relative-size(line-height, 100);
+      width: 88%;
+    }
   }
 
   .philosophy-copy {

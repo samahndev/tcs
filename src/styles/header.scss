@@ -176,15 +176,21 @@
   }
 
   .header-toggle-checkbox:checked + .header-toggle + .nav {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    top: 0;
   }
 
   .header-link {
-    background-color: white;
+    background-color: $ivory;
     cursor: pointer;
     height: 100%;
     position: relative;
     transition: background-color .3s $cubicBezier;
+
+    @include above-sm() {
+      background-color: white;
+    }
     
     &:after {
       background-color: $yellow;
@@ -214,6 +220,10 @@
       }
     }
 
+    &.header-logo-wrapper {
+      background-color: white;
+    }
+
     a,
     button {
       background-color: transparent;
@@ -241,21 +251,25 @@
   }
 
   .nav {
-    background-color: ivory;
-    display: none;
+    background-color: $ivory;
+    opacity: 0;
+    visibility: hidden;
     height: 100%;
     position: fixed;
     left: 0;
-    top: 0;
+    top: -40px;
     width: 100%;
+    transition: all .3s $cubicBezier;
 
     @include above-sm() {
       background-color: white;
-      display: block;
+      opacity: 1;
+      visibility: visible;
       position: relative;
       left: auto;
       top: auto;
       width: auto;
+      transition: none;
     }
 
     .nav-list {
@@ -283,6 +297,7 @@
           padding: 20px 30px;
           position: relative;
           text-align: left;
+          width: 100%;
 
           @include above-sm() {
             $value: 0 30;
@@ -343,14 +358,15 @@
       .nav-list-on-hover {
         left: 0;
         position: absolute;
-        top: 80px;
-        z-index: 0;
+        top: 50px;
+        z-index: 2;
         transition: all .3s $cubicBezier;
         opacity: 0;
         visibility: hidden;
 
         @include above-sm() {
           @include relative-size(top, 60);
+          z-index: 0;
         }
       }
 
@@ -358,17 +374,19 @@
         background-color: shade($green, 10%);//$green;
         color: $offWhite;
         left: auto;
-        padding: 50px 40px;
-        width: 370px;
+        padding: 50px 30px;
+        width: 100%;
 
         @include above-sm() {
           $value: 50 40;
           @include relative-size(padding, $value);
+          @include relative-size(width, 370);
         }
 
         &.active {
           opacity: 1;
           visibility: visible;
+          top: 57px;
 
           @include above-sm() {
             @include relative-size(top, 80);
@@ -400,6 +418,7 @@
         .btn {
           @extend .btn;
           margin-top: 20px;
+          width: auto;
 
           @include above-sm() {
             @include relative-size(margin-top, 32);

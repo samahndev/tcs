@@ -7,9 +7,9 @@ import Menus from '../components/menus';
 import ContactUs from '../components/contact-us';
 import Philosophy from '../components/philosophy';
 import InstagramFeed from '../components/instagram-feed';
-import aboutImage from '../images/41274643_307549579828965_5350101481835028502_n.jpg'
-import promoImage from '../images/39390469_1893213357650353_8309209022323475479_n.jpg'
-import functionImage from '../images/39607209_282537882573239_968077752777011638_n.jpg'
+import aboutImage from '../images/about-thecandyshop-cuisine.jpg'
+import promoImage from '../images/thecandyshop-coffee.jpg'
+import functionImage from '../images/thecandyshop-function.jpg'
 
 class IndexPage extends Component {
   render() {

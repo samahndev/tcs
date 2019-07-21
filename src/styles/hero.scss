@@ -15,7 +15,7 @@
   }
 
   &:before {
-    background-color: rgba(black, .4);
+    background-color: rgba(black, .2);
     content: '';
     height: 100%;
     left: 0;
@@ -30,10 +30,12 @@
     margin: 0 30px;
     position: relative;
     z-index: 2;
+    text-align: center;
 
     @include above-sm() {
       $value: 80 160 0;
       @include relative-size(margin, $value);
+      text-align: left;
     }
   }
 
@@ -43,8 +45,22 @@
   }
 
   .hero-content-title {
-    margin: 0;
+    margin: 0 auto;
     @include relative-size(margin-top, 60);
+    width: 250px;
+
+    @include above-sm() {
+      width: auto;
+      margin: 0;
+    }
+
+    .hero-content-subtitle {
+      font-size: 23px;
+
+      @include above-sm() {
+        @include relative-size(font-size, 90);
+      }
+    }
   }
 
   .hero-content-address {
@@ -76,6 +92,20 @@
       @include above-sm() {
         $values: 0 4;
         @include relative-size(margin, $values);  
+      }
+    }
+
+    .hide-desktop {
+      @include above-sm() {
+        display: none;
+      }
+    }
+
+    .hide-mobile {
+      display: none;
+
+      @include above-sm() {
+        display: inline;
       }
     }
   }

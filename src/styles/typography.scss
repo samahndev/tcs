@@ -28,8 +28,8 @@ h3,
 
 h1,
 .h1 {
-  font-size: 45px;
-  line-height: 50px;
+  font-size: 32px;
+  line-height: 35px;
 
   @include above-sm() {
     @include relative-size(font-size, 90);

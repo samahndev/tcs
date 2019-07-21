@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade'
 import * as SVGLoaders from 'svg-loaders-react';
 
 import PreloadImage from '../preload-image'
-import contactImage from '../../images/41274643_307549579828965_5350101481835028502_n.jpg'
+import contactImage from '../../images/thecandyshop-location.jpg'
 
 class ContactUs extends Component {
   state = {

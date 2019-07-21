@@ -10,13 +10,21 @@ const Link = ScrollAnim.Link;
 class Header extends Component {
   state = {
     isBooking: false,
-    windowHeight: window.innerHeight,
-    windowWidth: window.innerWidth,
+    windowHeight: null,
+    windowWidth: null,
     isBelowTheFold: false
   };
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll, false)
+    this.setState(
+      {
+        windowHeight: window.innerHeight,
+        windowWidth: window.innerWidth
+      },
+      () => {
+        window.addEventListener('scroll', this.handleScroll, false)
+      }
+    )
   }
 
   componentWillUnmount() {
@@ -55,19 +63,27 @@ class Header extends Component {
     });
   }
 
+  manuallyToggleModileNav = () => {
+    this.toggle.checked = false;
+  }
+
   render() {
     return (
       <header className={cx({
         'header': true,
         'header-compact': this.state.isBelowTheFold
       })}>
-        <Link to="hero" className="header-link">
+        <Link to="hero" className="header-link header-logo-wrapper">
           <div className="header-logo">
             <img src={logo} alt="The Candyshop" />
           </div>
         </Link>
-        <input id="nav-toggle" className="header-toggle-checkbox" type="checkbox" />
-        <label htmlFor="nav-toggle" className="header-toggle">
+        <input ref={ref => this.toggle = ref} id="nav-toggle" className="header-toggle-checkbox" type="checkbox" />
+        <label htmlFor="nav-toggle" className="header-toggle" onClick={() => {
+          if (this.state.isBooking) {
+            this.closeBookingForm()
+          }
+        }}>
           <span /><span />
         </label>
         <nav className="nav">
@@ -104,13 +120,13 @@ class Header extends Component {
             </li>
             <li>
               <Link to="about" className="header-link">
-                <button>The Candyshop</button>
+                <button onClick={this.manuallyToggleModileNav}>The Candyshop</button>
               </Link>
             </li>
             <li>
               <Link to="menu" className="header-link">
                 <a className="header-link-item">
-                  <button>
+                  <button onClick={this.manuallyToggleModileNav}>
                     Menu
                     {/* <div className="header-link-icon">
                       <img src={expandButton} alt="" />
@@ -126,17 +142,17 @@ class Header extends Component {
             </li>
             <li>
               <Link to="coffee-by-camper" className="header-link">
-                <button>Coffee by Camper</button>
+                <button onClick={this.manuallyToggleModileNav}>Coffee by Camper</button>
               </Link>
             </li>
             <li>
               <Link to="table-team" className="header-link">
-                <button>Table Team</button>
+                <button onClick={this.manuallyToggleModileNav}>Table Team</button>
               </Link>
             </li>
             <li>
               <Link to="contact-us" className="header-link">
-                <button>Contact Us</button>
+                <button onClick={this.manuallyToggleModileNav}>Contact Us</button>
               </Link>
             </li>
           </ul>

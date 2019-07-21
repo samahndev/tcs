@@ -1,21 +1,26 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade'
 
+import breakfast from '../../images/thecandyshop-breakfast.jpg'
+import lunchDinner from '../../images/thecandyshop-lunch-dinner.jpg'
+import weekend from '../../images/thecandyshop-weekend.jpg'
+import disert from '../../images/thecandyshop-disert.jpg'
+
 const menus = [
   {
-    image: 'https://via.placeholder.com/360x250/c3b284',
+    image: breakfast,
     name: 'Breakfast',
     time: 'Mon<span>-</span>Fri <span>/</span> 7am<span>-</span>11:30am',
     link: '#',
   },
   {
-    image: 'https://via.placeholder.com/360x250/81775c',
+    image: lunchDinner,
     name: 'Lunch & Dinner',
     time: 'Mon<span>-</span>Fri <span>/</span> 11:30am<span>-</span>Close<br />Sat <span>/</span> 3pm<span>-</span>Close',
     link: '#',
   },
   {
-    image: 'https://via.placeholder.com/360x250/7d6944',
+    image: weekend,
     name: 'Weekend',
     time: 'Sat & Sun <span>/</span> 8am<span>-</span>3pm',
     link: '#',
@@ -49,7 +54,7 @@ export default props => (
         <div
           className="menu-image"
           style={{
-            backgroundImage: 'url(https://via.placeholder.com/360x560/cca082)'
+            backgroundImage: `url(${disert})`
           }}
         />
       </div>
