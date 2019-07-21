@@ -1,17 +1,88 @@
 .header {
   background-color: white;
-  box-shadow: 10px 10px 1px rgba($green, .1);
   display: flex;
   height: 40px;
   position: fixed;
   right: 20px;
   top: 20px;
   z-index: 10;
+  transition: all .3s $cubicBezier;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: rgba($green, .1);
+    width: 100%;
+    height: 100%;
+    transition: all .3s $cubicBezier;
+  }
 
   @include above-sm() {
     @include relative-size(height, 80);
     @include relative-size(right, 40);
     @include relative-size(top, 40);
+
+    &:after {
+      @include relative-size(left, 10);
+      @include relative-size(top, 10);
+    }
+  }
+
+  &.header-compact {
+    @include above-sm() {
+      @include relative-size(height, 40);
+      @include relative-size(right, 20);
+      @include relative-size(top, 20);
+
+      &:after {
+        @include relative-size(left, 5);
+        @include relative-size(top, 5);
+      }
+    }
+
+    .header-logo {
+      @include above-sm() {
+        $value: 0 15;
+        @include relative-size(padding, $value);
+      }
+
+      img {
+        @include above-sm() {
+          @include relative-size(margin-top, 7);
+          @include relative-size(width, 20);
+        }
+      }
+    }
+
+    .nav {
+      .nav-list {
+        li {
+          a,
+          button {
+            @include above-sm() {
+              $value: 0 15;
+              @include relative-size(padding, $value);
+              @include relative-size(font-size, 13);
+            }
+          }
+        }
+
+        .nav-list-on-click,
+        .nav-list-on-hover {
+          @include above-sm() {
+            @include relative-size(top, 20);
+          }
+
+          &.active {
+            @include above-sm() {
+              @include relative-size(top, 40);
+            }
+          }
+        }
+      }
+    }
   }
 
   > .header-link {
@@ -27,6 +98,7 @@
     @include above-sm() {
       $value: 0 30;
       @include relative-size(padding, $value);
+      transition: padding .3s $cubicBezier;
     }
 
     img {
@@ -36,6 +108,7 @@
       @include above-sm() {
         @include relative-size(margin-top, 10);
         @include relative-size(width, 45);
+        transition: all .3s $cubicBezier;
       }
     }
   }
@@ -56,6 +129,7 @@
   }
 
   .header-toggle {
+    background-color: white;
     height: 40px;
     position: relative;
     width: 40px;
@@ -133,7 +207,7 @@
     }
 
     &:hover {
-      background-color: $ivory;//rgba($offWhite, .3);
+      background-color: $ivory;
 
       .header-link-icon {
         transform: translateY(1px);
@@ -213,6 +287,7 @@
           @include above-sm() {
             $value: 0 30;
             @include relative-size(padding, $value);
+            transition: padding .3s $cubicBezier;
           }
 
           &:hover {
@@ -266,19 +341,21 @@
 
       .nav-list-on-click,
       .nav-list-on-hover {
-        display: none;
         left: 0;
         position: absolute;
         top: 80px;
-        z-index: 1000;
+        z-index: 0;
+        transition: all .3s $cubicBezier;
+        opacity: 0;
+        visibility: hidden;
 
         @include above-sm() {
-          @include relative-size(top, 80);
+          @include relative-size(top, 60);
         }
       }
 
       .nav-list-on-click {
-        background-color: $green;
+        background-color: shade($green, 10%);//$green;
         color: $offWhite;
         left: auto;
         padding: 50px 40px;
@@ -290,7 +367,12 @@
         }
 
         &.active {
-          display: block;
+          opacity: 1;
+          visibility: visible;
+
+          @include above-sm() {
+            @include relative-size(top, 80);
+          }
         }
 
         p {

@@ -176,6 +176,16 @@ $desktopWidth: 1440px;
   #{$property}: $setValue;
 }
 
+@mixin relative-box-sizing($values, $baseSize:100vw) {
+  $setValue: ();
+  
+  @each $value in $values {
+    $setValue: append($setValue, ($value/$relativeSizeBase)*$baseSize);
+  }
+
+  box-sizing: #{$setValue} rgba($green, .2);
+}
+
 @mixin underlined-link($lineWidth: 2, $linePos: 0) {
   color: $green;
   opacity: 1;

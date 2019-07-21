@@ -9,8 +9,33 @@ const Link = ScrollAnim.Link;
 
 class Header extends Component {
   state = {
-    isBooking: false
+    isBooking: false,
+    windowHeight: window.innerHeight,
+    windowWidth: window.innerWidth,
+    isBelowTheFold: false
   };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll, false)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll, false)
+  }
+
+  handleScroll = () => {
+    let scrollTop = window.pageYOffset
+    if (( scrollTop > ( this.state.windowHeight / 2 ) ) && ( this.state.windowWidth >= 1024 )) {
+      if (!this.state.isBelowTheFold) {
+        this.setState({ isBelowTheFold: true })
+      }
+    }
+    else {
+      if (this.state.isBelowTheFold) {
+        this.setState({ isBelowTheFold: false })
+      }
+    }
+  }
 
   menuClickHandler = e => {
     e.stopPropagation();
@@ -32,7 +57,10 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="header">
+      <header className={cx({
+        'header': true,
+        'header-compact': this.state.isBelowTheFold
+      })}>
         <Link to="hero" className="header-link">
           <div className="header-logo">
             <img src={logo} alt="The Candyshop" />
